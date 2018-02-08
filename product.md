@@ -1,6 +1,4 @@
-# YOUR PRODUCT/TEAM NAME
-
-Student Accessibility Portal (SAP)
+# Student Accessibility Portal (SAP)
 
 #### Q1: What are you planning to build?
 
