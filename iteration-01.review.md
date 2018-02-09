@@ -52,23 +52,17 @@ The only change we are going to make for the future iterations is to add a code 
 
 #### Goals and/or tasks that were planned but not met/completed:
 
-Created detailed wireframe of main pages (ie. How our log in or home page would look like with colours and proper layout)
-We decided it was more important to have a sketch of all pages and decide on how the user interacts so we did not get to this in time
-Determine categories/nodes of our graphs through researching the specific pathways to complete a task
-We were unable to complete because we would need to actually sign up for some of these services so we need to do further research by asking administrators at accessibility services which takes awhile and so unable to do it by iteration deadline
+1. Created detailed wireframe of main pages (ie. How our log in or home page would look like with colours and proper layout).
+  We decided it was more important to have a sketch of all pages and decide on how the user interacts so we did not get to this in time
 
-Maybe write about what technologies we are going to use? And other things for next iteration
-
+2. Determine categories/nodes of our graphs through researching the specific pathways to complete a task.
+  We were unable to complete because we would need to actually sign up for some of these services so we need to do further research by asking administrators at accessibility services which takes awhile and so unable to do it by iteration deadline
 
 ## Meeting Highlights
 
 1. We decided how we would implement our UI (see mockups)
-2. We decided on product pages, which are
-Log in
-Personalized graph/main page
-All services graph
-Search results
-Category page (which is a detailed graph specific to one task)
-Profile page
+
+2. We decided on product pages, which are:
+Log in, Personalized graph/main page, All services graph, Search results, Category page (which is a detailed graph specific to one task), and Profile page
 
 3. Decided to prioritize features for the personas we created so for future iterations we will look into and implement tasks specific to these use cases
