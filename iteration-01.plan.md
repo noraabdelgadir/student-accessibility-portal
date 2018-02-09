@@ -30,4 +30,6 @@ https://docs.google.com/document/d/1PlDxmotpiIa8HH8o7zB1K77sz9IeQfuyrudF2JKy4RI/
 
 #### Artifacts  - Mockups
 
- The images of the mockups uploaded separately, below are the links:
+The images of the mockups uploaded separately, below are the images:
+
+![Login](./mockups/category.jpg)
