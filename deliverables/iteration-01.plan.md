@@ -32,17 +32,17 @@ https://docs.google.com/document/d/1PlDxmotpiIa8HH8o7zB1K77sz9IeQfuyrudF2JKy4RI/
 
 The images of the mockups uploaded separately, below are the images:
 
-![Login](./mockups/login-rotate.jpg)
+![Login](../mockups/login-rotate.jpg)
 Figure 1: Page for user to login to SAP
 
-![Main](./mockups/main-rotate.jpg)
+![Main](../mockups/main-rotate.jpg)
 Figure 2: The first page after login. Student personal page that contains all her favorite and relevant categories presented as a graph. A user can remove or edit any of these services.
 
-![Services](./mockups/services-rotate.jpg)
+![Services](../mockups/services-rotate.jpg)
 Figure 3: Displays a graph containing all available accessibility services by category when the user clicks “All services” in the navigation bar. One can also filter the graph presentation by category.
 
-![Category](./mockups/category-rotate.jpg)
+![Category](../mockups/category-rotate.jpg)
 Figure 4: Once a user chooses a specific category, they can see its different services, can favorite a specific service to be displayed on their personal graph and they can also get contact info about the service
 
-![Search](./mockups/search-rotate.jpg)
+![Search](../mockups/search-rotate.jpg)
 Figure 5: Once a user searches a specific service or resource, they get this page containing all the search result and they can also favorite a certain search result.
