@@ -5,16 +5,23 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>All Services</title>
-	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="graph.css" type="text/css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-  <script src="arbor.js"></script>
-  <script src="graphics.js"></script>
-  <script src="renderer.js"></script>
+  <script src="../../assets/scripts/arbor/arbor.js"></script>
+  <script src="../../assets/scripts/arbor/graphics.js"></script>
+  <script src="../../assets/scripts/arbor/renderer.js"></script>
 
 </head>
 <body>
-  <canvas id="viewport" width="800" height="600"></canvas>
-  <script src="graph.js"></script>
+
+  <div id="categoriesList">
+  </div>
+
+  <div id="allServicesGraph">
+    <canvas id="viewport" width="800" height="600"></canvas>
+    <script src="./graph.js"></script>
+  </div>
+
 </body>
 </html>
