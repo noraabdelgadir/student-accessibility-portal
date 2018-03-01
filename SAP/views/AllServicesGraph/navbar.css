@@ -5,6 +5,7 @@
 	margin-bottom:1.5em;
 	display: grid;
 	grid-template-columns: 30% auto 20%;
+	font-size: 1.3rem;
 }
 
 .topnav a {
@@ -24,14 +25,14 @@
     display: none;
 }
 
-#title {
-		grid-column-start: 1;
-		padding: 0.5rem;
-}
-
 #nav {
 	grid-column-start: 2;
 	padding: 0 5rem;
+}
+
+#title {
+		grid-column-start: 1;
+		padding: 1rem;
 }
 
 #logo {
@@ -54,8 +55,10 @@ header svg{
 
 #search{
     text-decoration: none;
-		margin: 1rem;
+		margin: auto;
+		padding: 0.3rem;
 		background: white;
+		font-size: 1.3rem;
 }
 
 #search > input {
