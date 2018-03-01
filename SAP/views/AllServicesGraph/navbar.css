@@ -1,0 +1,49 @@
+/*-------------------------NAV BAR/HEADER-------------------------*/
+.topnav {
+	overflow: hidden;
+	background-color: #002A5C;
+	margin-top:1.5em;
+	margin-bottom:1.5em;
+
+
+
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: white; 
+    text-align: center;
+    padding: 24px 28px;
+    text-decoration: none;
+    font-size: 2em;
+    font: Arial, sans-serif;
+
+
+}
+
+.topnav a:hover {
+    background-color: #7BA4D9;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+header{
+	font-size: 3em;
+}
+
+input{
+	margin-top:0.5em;
+	float:right;
+	margin-right:1.5em;
+	padding:0.5em;
+}
+
+#searchicon{
+	height:2%;
+	width:2%;
+	float:right;
+}

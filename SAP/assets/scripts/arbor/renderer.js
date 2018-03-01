@@ -1,5 +1,5 @@
 (function(){
-  
+
   Renderer = function(canvas){
     var canvas = $(canvas).get(0)
     var ctx = canvas.getContext("2d");
@@ -9,7 +9,7 @@
     var that = {
       init:function(system){
         particleSystem = system
-        particleSystem.screenSize(canvas.width, canvas.height) 
+        particleSystem.screenSize(canvas.width, canvas.height)
         particleSystem.screenPadding(40)
 
         that.initMouseHandling()
@@ -26,7 +26,7 @@
           // node: {mass:#, p:{x,y}, name:"", data:{}}
           // pt:   {x:#, y:#}  node position in screen coords
 
-          // determine the box size and round off the coords if we'll be 
+          // determine the box size and round off the coords if we'll be
           // drawing a text label (awful alignment jitter otherwise...)
           var label = node.data.label||""
           var w = ctx.measureText(""+label).width + 10
@@ -52,14 +52,14 @@
 
           // draw the text
           if (label){
-            ctx.font = "12px Helvetica"
+            ctx.font = "16px Helvetica"
             ctx.textAlign = "center"
             ctx.fillStyle = "white"
             if (node.data.color=='none') ctx.fillStyle = '#333333'
             ctx.fillText(label||"", pt.x, pt.y+4)
             ctx.fillText(label||"", pt.x, pt.y+4)
           }
-        })    			
+        })
 
 
         // draw the edges
@@ -77,7 +77,7 @@
           var tail = intersect_line_box(pt1, pt2, nodeBoxes[edge.source.name])
           var head = intersect_line_box(tail, pt2, nodeBoxes[edge.target.name])
 
-          ctx.save() 
+          ctx.save()
             ctx.beginPath()
             ctx.lineWidth = (!isNaN(weight)) ? parseFloat(weight) : 1
             ctx.strokeStyle = (color) ? color : "#cccccc"
@@ -117,7 +117,7 @@
 
 
       },
-      initMouseHandling:function(){
+      /*initMouseHandling:function(){
         // no-nonsense drag and drop (thanks springy.js)
         selected = null;
         nearest = null;
@@ -126,7 +126,7 @@
 
         // set up a handler object that will initially listen for mousedowns then
         // for moves and mouseups while dragging
-        var handler = {
+        /*var handler = {
           clicked:function(e){
             var pos = $(canvas).offset();
             _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
@@ -168,9 +168,113 @@
         $(canvas).mousedown(handler.clicked);
 
       }
+    }*/
 
+    initMouseHandling:function(){
+    // no-nonsense drag and drop (thanks springy.js)
+    selected = null;
+    nearest = null;
+    var dragged = null;
+    var oldmass = 1
+    var mouse_is_down = false;
+    var mouse_is_moving = false
+    var dom = $(canvas)
+
+    // set up a handler object that will initially listen for mousedowns then
+    // for moves and mouseups while dragging
+    var handler = {
+      mousemove:function(e){
+        if(!mouse_is_down){
+          var pos = $(canvas).offset();
+          _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
+          nearest = particleSystem.nearest(_mouseP);
+
+          if (!nearest.node) return false
+          selected = (nearest.distance < 50) ? nearest : null
+          if(selected && selected.node.data.link){
+            dom.addClass('linkable')
+          } else {
+            dom.removeClass('linkable')
+          }
+        }
+        return false
+      },
+      clicked:function(e){
+        var pos = $(canvas).offset();
+        _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
+        nearest = particleSystem.nearest(_mouseP);
+
+        if (!nearest.node) return false
+        selected = (nearest.distance < 50) ? nearest : null
+
+        if (nearest && selected && nearest.node===selected.node){
+          var link = selected.node.data.link
+          if (link.match(/^#/)){
+            window.open(link.substr(1),"_self");
+             //$(that).trigger({type:"navigate", path:link.substr(1)})
+          } else{
+             window.open(link, "_self")
+          }
+          return false
+        }
+      },
+      mousedown:function(e){
+        var pos = $(canvas).offset();
+        _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
+        selected = nearest = dragged = particleSystem.nearest(_mouseP);
+
+        if (dragged.node !== null) dragged.node.fixed = true
+
+        mouse_is_down = true
+        mouse_is_moving = false
+
+        $(canvas).bind('mousemove', handler.dragged)
+        $(window).bind('mouseup', handler.dropped)
+
+        return false
+      },
+      dragged:function(e){
+        var old_nearest = nearest && nearest.node._id
+        var pos = $(canvas).offset();
+        var s = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
+
+        mouse_is_moving = true
+
+        if (!nearest) return
+        if (dragged !== null && dragged.node !== null){
+          var p = particleSystem.fromScreen(s)
+          dragged.node.p = p
+        }
+
+        return false
+      },
+
+      dropped:function(e){
+        if (dragged===null || dragged.node===undefined) return
+        if (dragged.node !== null) dragged.node.fixed = false
+        dragged.node.tempMass = 50
+        dragged = null
+        selected = null
+        $(canvas).unbind('mousemove', handler.dragged)
+        $(window).unbind('mouseup', handler.dropped)
+        _mouseP = null
+
+        if(mouse_is_moving){
+          // console.log("was_dragged")
+        } else {
+          handler.clicked(e)
+        }
+
+        mouse_is_down = false
+
+        return false
+      }
+    }
+    $(canvas).mousedown(handler.mousedown);
+    $(canvas).mousemove(handler.mousemove);
     }
 
+  }
     // helpers for figuring out where to draw arrows (thanks springy.js)
     var intersect_line_line = function(p1, p2, p3, p4)
     {
@@ -202,6 +306,6 @@
     }
 
     return that
-  }    
-  
+  }
+
 })()

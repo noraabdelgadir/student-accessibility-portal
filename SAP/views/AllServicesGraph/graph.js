@@ -1,15 +1,16 @@
 $(document).ready(function(){
   var sys = arbor.ParticleSystem(1000, 400, 1);
-  sys.parameters({gravity:true});
+  sys.parameters({repulsion: 1000, gravity: true, dt: 0.35});
   sys.renderer = Renderer("#viewport") ;
-  var data = {
+  var allServices = {
         nodes:{
-          animals:{'color':'red','shape':'dot','label':'Animals'},
-          dog:{'color':'green','shape':'dot','label':'dog'},
-          cat:{'color':'blue','shape':'dot','label':'cat'}
+          all:{'mass':'1','color':'#00215C','shape':'dot','label':'All Accessibility Services'},
+          cat1:{'mass':'0.5','color':'#008BB0','shape':'dot','label':'Category 1'},
+          cat2:{'color':'#008BB0','shape':'dot','label':'Category 2', link:'http://stackoverflow.com'},
+          cat3:{'color':'#008BB0','shape':'dot','label':'Category 3'}
         },
         edges:{
-          animals:{ dog:{}, cat:{} }}
+          all:{ cat1:{length:0.5}, cat2:{length:0.5}, cat3:{length:0.5} }}
       };
-  sys.graft(data);
+  sys.graft(allServices);
 });
