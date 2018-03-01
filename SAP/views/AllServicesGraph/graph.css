@@ -1,9 +1,11 @@
+html {
+  font:16px Arial, sans-serif;
+}
+
 body{
   margin:0;
-  padding:20px;
-  font:12px/17px Arial, sans-serif;
-  background:#f9f9f9;
-
+  font:16px Arial, sans-serif;
+  background:#e5e5e5;
 }
 
 
@@ -102,5 +104,3 @@ label.container{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-
-
