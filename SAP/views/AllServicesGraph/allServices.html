@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>All Services</title>
 	<link rel="stylesheet" href="graph.css" type="text/css">
+  <link rel="stylesheet" href="navbar.css" type="text/css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
   <script src="../../assets/scripts/arbor/arbor.js"></script>
@@ -13,9 +14,52 @@
   <script src="../../assets/scripts/arbor/renderer.js"></script>
 
 </head>
+<header>
+  <div id="title">Student Accessibility Services</div>
+</header>
 <body>
 
+
+ <div class="topnav">
+    <a href="#home" class="active">Home</a>
+    <a href="" class="active">All Services</a>
+    <a href="" class="active">Settings</a>
+    <input type="text" placeholder="Search...">
+  </div>
+
+
+<!-- 
+  <nav id="menu">
+      <ul class="topnav" id="myTopnav">
+          <li class="navitem"><a href="#profilepage">Home</a></li>
+          <li class="navitem"><a href= "#aboutme">Profile</a></li>
+          <li class="navitem"><a href="#feed">Feed</a></li>
+          <li class="icon">
+              <a href="javascript:void(0);" style="font-size:1.5em;" onclick="DropDown()">☰</a>
+          </li>    
+      
+      </ul>
+  </nav>
+
+-->
   <div id="categoriesList">
+        <h1>Categories</h1>
+        <label class="container">Category 1
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Category 2
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Category 3
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Category 4
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
   </div>
 
   <div id="allServicesGraph">
