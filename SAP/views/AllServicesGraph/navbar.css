@@ -37,7 +37,6 @@ header{
 
 input{
 	margin-top:0.5em;
-	float:right;
 	margin-right:1.5em;
 	padding:0.5em;
 }
@@ -45,5 +44,20 @@ input{
 #searchicon{
 	height:2%;
 	width:2%;
-	float:right;
+}
+
+svg{
+	margin-right:0.5em;
+}
+
+#search{
+	float: left;
+    display: block;
+    color: white; 
+    text-align: center;
+    padding: 24px 28px;
+    text-decoration: none;
+    font-size: 2em;
+    font: Arial, sans-serif;
+    float:right;
 }
