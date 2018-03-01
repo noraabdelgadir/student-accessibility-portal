@@ -19,8 +19,13 @@ body{
 h1{
 	background-color: #002A5C;
 	color:white;
-	padding:0.7em;
-	font-size:2em;
+	height:2em;
+	margin:0em;
+	font-size:1.5em;
+	text-align: left;
+	padding-top: 1em;
+	padding-left:1em;
+
 
 }
 
@@ -29,10 +34,12 @@ h1{
 	float:left;
 	width:25em;
 	margin:5em;
+	overflow:hidden;
+	overflow-y:scroll;
+	height:40em;
 }
 
-.container {height:200px; width:18%;}
-.container {overflow:hidden; overflow-y:scroll;}
+
 
 /* The container */
 .container {
@@ -46,11 +53,14 @@ h1{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+
 }
 
 label.container{
 	padding-right:10em;
-	margin:0em;
+	margin:2em;
+	white-space: nowrap;
 }
 
 /* Hide the browser's default checkbox */
@@ -103,4 +113,9 @@ label.container{
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.fa-filter{
+	height:1rem;
+	width:1rem;
 }
