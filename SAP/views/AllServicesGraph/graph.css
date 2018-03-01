@@ -34,7 +34,7 @@ h1{
 	margin:5em;
 	overflow:hidden; 
 	overflow-y:scroll;
-	height:50em;
+	height:40em;
 }
 
 
@@ -51,11 +51,14 @@ h1{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+
 }
 
 label.container{
 	padding-right:10em;
 	margin:2em;
+	white-space: nowrap;
 }
 
 /* Hide the browser's default checkbox */
