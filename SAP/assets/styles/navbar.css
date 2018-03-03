@@ -1,3 +1,14 @@
+html {
+  font:16px Arial, sans-serif;
+  overflow: hidden;
+}
+
+body{
+  margin:0;
+  font:16px Arial, sans-serif;
+  background:#e5e5e5;
+}
+
 /*-------------------------NAV BAR/HEADER-------------------------*/
 .topnav {
 	overflow: hidden;
