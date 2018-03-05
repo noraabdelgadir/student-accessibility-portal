@@ -23,22 +23,29 @@
   <body>
 
     <div class="login" id="login">
-      <form id="login-form" name="login">
+      <form id="login-form" class="login-form" name="login">
 
         <div class="container" id="container">
 
-        <label for="first_name">Username</label>
+          <div id="username" style="padding-bottom:3px">
+
+        <label for="username">Username</label>
         <input type="text" name="username" />
-
-        <p>
-
-        <label for="last_name">Password</label>
-        <input type="text" name="password"></input>
-
 
       </div>
 
+        <br>
+
+        <div id="pw" style="padding-bottom:5px">
+
+        <label for="password">Password</label>
+        <input type="text" name="password"></input>
+
+      </div>
+      </div>
+
     <input type="button" onclick="checkLogin(this.form)" value="Login"/>
+    <input type="button" onclick="location.href='signup.html';" value="Sign Up"/>
 
 
 
