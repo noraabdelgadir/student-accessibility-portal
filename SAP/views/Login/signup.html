@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="signup.css">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Accessibility Mock Services</title>
 
     <script type="text/javascript" src="signup.js"></script>
-
+<!--
 
       <div class="navbar">
-        <!-- <a href="#home">Home</a> -->
         <a href="#home" id="logo">
           <img src="uoft_logo.png" style="width:70%;height:70%;border:0;padding:0;">
         </a>
 
-      </div>
+      </div> -->
 
 
   </head>
@@ -22,6 +21,23 @@
 
   <body>
 
+    <div class="signup-page" style="padding-top:100px;">
+      <div class="form" >
+
+        <form class="signup-form">
+          <input type="text" name="firstName" placeholder="first name"/>
+          <input type="password" name="lastName" placeholder="last name"/>
+
+          <input type="text" name="userName" placeholder="username"/>
+          <input type="password" name="password" placeholder="password"/>
+
+          <input type="button" onclick="location.href='index.html';" value="Login"/>
+          <input type="button" onclick="checkSignUp(this.form)" value="Sign Up"/>
+        </form>
+      </div>
+    </div>
+
+<!--
     <div class="login" id="login">
       <form id="login-form" name="login">
 
@@ -73,7 +89,7 @@
 
 
       </form>
-    </div>
+    </div> -->
 
 
 
