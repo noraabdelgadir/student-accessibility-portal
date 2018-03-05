@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.login-page {
+.signup-page {
  width: 360px;
  padding: 8% 0 0;
  margin: auto;
@@ -8,7 +8,7 @@
 .form {
  position: relative;
  z-index: 1;
- background: #bfc1b6;
+ background: #abb2be;
  max-width: 360px;
  margin: 0 auto 100px;
  padding: 40px;
