@@ -26,7 +26,7 @@ function checkLogin(form){
   if(obj.hasOwnProperty(form.username.value)){
     if (obj[form.username.value]["password"] == form.password.value){
       flag = true;
-      window.open('../AllServicesGraph/allServices.html',"_self")
+      window.open('../PersonalGraph/main.html',"_self")
     }
   }
 
