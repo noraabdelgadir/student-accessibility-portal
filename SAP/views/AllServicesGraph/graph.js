@@ -5,12 +5,13 @@ $(document).ready(function(){
   var allServices = {
         nodes:{
           all:{'mass':'1','color':'#00215C','shape':'dot','label':'All Accessibility Services'},
-          cat1:{'mass':'0.5','color':'#008BB0','shape':'dot','label':'Category 1'},
-          cat2:{'color':'#008BB0','shape':'dot','label':'Category 2', link:'http://stackoverflow.com'},
-          cat3:{'color':'#008BB0','shape':'dot','label':'Category 3'}
+          cat1:{'mass':'0.5','color':'#008BB0','shape':'dot','label':'Counsellors'},
+          cat2:{'color':'#008BB0','shape':'dot','label':'Test and Exam Booking', link:'http://stackoverflow.com'},
+          cat3:{'color':'#008BB0','shape':'dot','label':'Note Taking'},
+          cat4:{'color':'#008BB0','shape':'dot','label':'Building Accessibility'}
         },
         edges:{
-          all:{ cat1:{length:0.5}, cat2:{length:0.5}, cat3:{length:0.5} }}
+          all:{ cat1:{length:0.5}, cat2:{length:0.5}, cat3:{length:0.5}, cat4:{length:0.5} }}
       };
   sys.graft(allServices);
 });
