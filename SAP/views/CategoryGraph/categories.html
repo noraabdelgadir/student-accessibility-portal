@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name='view' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+      <title>Categories</title>
+        <link rel="stylesheet" href="categories.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/styles/navbar.css" type="text/css">
+        <script language="javascript" type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../../assets/scripts/arbor/arbor.js" ></script>
+        <script language="javascript" type="text/javascript" src="../../assets/scripts/arbor/graphics.js" ></script>
+        <script language="javascript" type="text/javascript" src="../../assets/scripts/arbor/categoryRenderer.js" ></script>
+    </head>
+    <body>
+
+      <!-- Navigation Bar <!--> 
+      <header class="topnav">
+        <div id="title">
+          <img src="../../SAPlogo2.png" alt="SAP Logo" id="logo">
+        </div>
+
+        <div id="nav">
+           <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
+           <a href="" class="active"><i class="fas fa-share-alt"></i>All Services</a>
+           <a href="" class="active"><i class="fas fa-cog"></i>Settings</a>
+         </div>
+
+         <div id="search">
+           <i class="fas fa-search"></i>
+           <input type="text" placeholder="Search...">
+         </div>
+
+      </header>
+      <div id="container" style="width:100%;">  
+
+        <!-- Main graph <!-->                                  
+        <div id="graph" style="float:left; width:50%;"> 
+          <canvas id="viewport" width="600" height="600"></canvas>
+          <script src="categories.js"></script>
+        </div>       
+
+        <!-- Services <!-->              
+        <div id="service1" style="float:right; width:50%; display: none;"> 
+          <h1>Contact info</h1>
+          <p>phone number:</p>
+          <p>Email:</p>
+          <p>Address:</p>
+          <button></button>
+        </div>                   
+      </div>   
+    </body>
+</html>
