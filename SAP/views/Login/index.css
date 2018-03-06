@@ -8,7 +8,7 @@
 .form {
  position: relative;
  z-index: 1;
- background: #abb2be;
+ background: #002A5C;
  max-width: 360px;
  margin: 0 auto 100px;
  padding: 40px;
@@ -95,7 +95,7 @@ input[type=button] {
 
 input[type=button]:hover {
   border: 3px solid #fff;
-  background-color: #0d1848;
+  background-color: #abb2be;;
   color: #fff;
 }
 
