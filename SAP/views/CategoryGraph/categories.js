@@ -12,8 +12,7 @@ $(document).ready(function(){
        service3:{'color': '#008BB0', 'shape': 'square', 'label': 'Saved'},
      },
      edges:{
-       category: {service1:{length:0.4}, service2:{length:0.4}, service3:{length:0.4},
-              service4:{length:0.4}, service5:{length:0.4}, service6:{length:0.4}}
+       category: {service1:{length:0.4}, service2:{length:0.4}, service3:{length:0.4}}
      }
    };
   sys.graft(data);
