@@ -139,14 +139,67 @@
             selected = (nearest.distance < 50) ? nearest : null
 
             // selecting a node by clicking on it
-            if (nearest && selected && nearest.node===selected.node) {
-              // if(selected.node.name == "service1"){
-              //   var service = document.getElementById(selected.node.name);
-              //   if (service.style.display === "none")
-              //       service.style.display = "block";
-              //   else
-              //       service.style.display = "none";
-              // }
+            //Assumes that the html element of the service is the same name as
+            //the service
+
+            if(selected.node.name == "service1"){
+              document.getElementById("service2").style.display = "none";
+              document.getElementById("service3").style.display = "none";
+              document.getElementById("service4").style.display = "none";
+              document.getElementById("service5").style.display = "none";
+              document.getElementById("service6").style.display = "none";
+              var service = document.getElementById(selected.node.name);
+              if (service.style.display === "none")
+                  service.style.display = "block";
+              else
+                  service.style.display = "none";
+
+            }
+            else if (selected.node.name == "service2") {
+              document.getElementById("service1").style.display = "none";
+              document.getElementById("service3").style.display = "none";
+              document.getElementById("service4").style.display = "none";
+              document.getElementById("service5").style.display = "none";
+              document.getElementById("service6").style.display = "none";
+              var service = document.getElementById(selected.node.name);
+              if (service.style.display === "none")
+                  service.style.display = "block";
+              else
+                  service.style.display = "none";
+
+            }
+            else if (selected.node.name == "service3") {
+              document.getElementById("service1").style.display = "none";
+              document.getElementById("service2").style.display = "none";
+              document.getElementById("service4").style.display = "none";
+              document.getElementById("service5").style.display = "none";
+              document.getElementById("service6").style.display = "none";
+              var service = document.getElementById(selected.node.name);
+              if (service.style.display === "none")
+                  service.style.display = "block";
+              else
+                  service.style.display = "none";
+
+            }
+            else if (selected.node.name == "service4") {
+              document.getElementById("service1").style.display = "none";
+              document.getElementById("service2").style.display = "none";
+              document.getElementById("service3").style.display = "none";
+              document.getElementById("service5").style.display = "none";
+              document.getElementById("service6").style.display = "none";
+              var service = document.getElementById(selected.node.name);
+              if (service.style.display === "none")
+                  service.style.display = "block";
+              else
+                  service.style.display = "none";
+
+            }
+            else if (selected.node.name == "service5") {
+              document.getElementById("service1").style.display = "none";
+              document.getElementById("service3").style.display = "none";
+              document.getElementById("service4").style.display = "none";
+              document.getElementById("service2").style.display = "none";
+              document.getElementById("service6").style.display = "none";
               var service = document.getElementById(selected.node.name);
               if (service.style.display === "none")
                   service.style.display = "block";
@@ -154,8 +207,29 @@
                   service.style.display = "none";
 
 
+            }
+            else if (selected.node.name == "service6") {
+            document.getElementById("service1").style.display = "none";
+            document.getElementById("service3").style.display = "none";
+            document.getElementById("service4").style.display = "none";
+            document.getElementById("service5").style.display = "none";
+            document.getElementById("service2").style.display = "none";
+              var service = document.getElementById(selected.node.name);
+              if (service.style.display === "none")
+                  service.style.display = "block";
+              else
+                  service.style.display = "none";
+
 
             }
+
+            // if (nearest && selected && nearest.node===selected.node) {
+            //   var service = document.getElementById(selected.node.name);
+            //   if (service.style.display === "none")
+            //       service.style.display = "block";
+            //   else
+            //       service.style.display = "none";
+            // }
 
             $(canvas).bind('mousemove', handler.dragged)
             $(window).bind('mouseup', handler.dropped)
