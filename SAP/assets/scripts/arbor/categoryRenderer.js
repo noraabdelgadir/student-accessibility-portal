@@ -143,12 +143,9 @@
             //the service
 
             if(selected.node.name == "service1"){
-              document.getElementById("service2").style.display = "none";
-              document.getElementById("service3").style.display = "none";
-              document.getElementById("service4").style.display = "none";
-              document.getElementById("service5").style.display = "none";
-              document.getElementById("service6").style.display = "none";
-              var service = document.getElementById(selected.node.name);
+              document.getElementById("letter-of-accomodation").style.display = "none";
+              document.getElementById("saved").style.display = "none";
+              var service = document.getElementById("verification-of-illiness");
               if (service.style.display === "none")
                   service.style.display = "block";
               else
@@ -156,12 +153,10 @@
 
             }
             else if (selected.node.name == "service2") {
-              document.getElementById("service1").style.display = "none";
-              document.getElementById("service3").style.display = "none";
-              document.getElementById("service4").style.display = "none";
-              document.getElementById("service5").style.display = "none";
-              document.getElementById("service6").style.display = "none";
-              var service = document.getElementById(selected.node.name);
+              document.getElementById("verification-of-illiness").style.display = "none";
+              document.getElementById("saved").style.display = "none";
+
+              var service = document.getElementById("letter-of-accomodation");
               if (service.style.display === "none")
                   service.style.display = "block";
               else
@@ -169,57 +164,14 @@
 
             }
             else if (selected.node.name == "service3") {
-              document.getElementById("service1").style.display = "none";
-              document.getElementById("service2").style.display = "none";
-              document.getElementById("service4").style.display = "none";
-              document.getElementById("service5").style.display = "none";
-              document.getElementById("service6").style.display = "none";
-              var service = document.getElementById(selected.node.name);
+              document.getElementById("verification-of-illiness").style.display = "none";
+              document.getElementById("letter-of-accomodation").style.display = "none";
+
+              var service = document.getElementById("saved");
               if (service.style.display === "none")
                   service.style.display = "block";
               else
                   service.style.display = "none";
-
-            }
-            else if (selected.node.name == "service4") {
-              document.getElementById("service1").style.display = "none";
-              document.getElementById("service2").style.display = "none";
-              document.getElementById("service3").style.display = "none";
-              document.getElementById("service5").style.display = "none";
-              document.getElementById("service6").style.display = "none";
-              var service = document.getElementById(selected.node.name);
-              if (service.style.display === "none")
-                  service.style.display = "block";
-              else
-                  service.style.display = "none";
-
-            }
-            else if (selected.node.name == "service5") {
-              document.getElementById("service1").style.display = "none";
-              document.getElementById("service3").style.display = "none";
-              document.getElementById("service4").style.display = "none";
-              document.getElementById("service2").style.display = "none";
-              document.getElementById("service6").style.display = "none";
-              var service = document.getElementById(selected.node.name);
-              if (service.style.display === "none")
-                  service.style.display = "block";
-              else
-                  service.style.display = "none";
-
-
-            }
-            else if (selected.node.name == "service6") {
-            document.getElementById("service1").style.display = "none";
-            document.getElementById("service3").style.display = "none";
-            document.getElementById("service4").style.display = "none";
-            document.getElementById("service5").style.display = "none";
-            document.getElementById("service2").style.display = "none";
-              var service = document.getElementById(selected.node.name);
-              if (service.style.display === "none")
-                  service.style.display = "block";
-              else
-                  service.style.display = "none";
-
 
             }
 
