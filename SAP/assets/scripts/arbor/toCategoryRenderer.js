@@ -20,28 +20,52 @@
 
         gfx.clear() // convenience ƒ: clears the whole canvas rect
 
-        //fix the middle node
-        var middleNode = particleSystem.getNode("all");
-        var pos = $(canvas).offset();
-        var point = particleSystem.fromScreen(arbor.Point(pos.left + 100, pos.top + 200));
-        middleNode._fixed = true;
-        middleNode._p = point;
-        middleNode.tempMass = .1;
+        var count = 0;
+        particleSystem.eachNode(function(node, pt){
+            var middleNode = particleSystem.getNode("center");
+            var x = middleNode.p.x;
+            var y = middleNode.p.y;
 
+            var angle = (count / (5/2)) * Math.PI;
+
+            var point = arbor.Point((1 * Math.cos(angle)) + x, (1 * Math.sin(angle)) + y);
+
+            if (node.name != "center"){
+              node.p = point;
+            }
+
+            count++;
+        })
         // draw the nodes & save their bounds for edge drawing
         var nodeBoxes = {}
         particleSystem.eachNode(function(node, pt){
           // node: {mass:#, p:{x,y}, name:"", data:{}}
           // pt:   {x:#, y:#}  node position in screen coords
 
+          //fix the middle node
+          /*if (node.name == "all"){
+            var middleNode = particleSystem.getNode("all");
+            var pos = $(canvas).offset();
+            var point = particleSystem.fromScreen(arbor.Point(pos.left + 100, pos.top + 200));
+            middleNode._fixed = true;
+            middleNode._p = point;
+            middleNode.tempMass = .1;
+          }*/
+
+          //make the student names node large
+          var x = 0;
+          if (node.name == "center"){
+            x = 200;
+          }
+
           // determine the box size and round off the coords if we'll be
           // drawing a text label (awful alignment jitter otherwise...)
-          var label = node.data.label||""
-          var w = ctx.measureText(""+label).width + 10
+          var label = node.data.label||"";
+          var w = ctx.measureText(""+label).width + 10;
           if (!(""+label).match(/^[ \t]*$/)){
             pt.x = Math.floor(pt.x)
             pt.y = Math.floor(pt.y)
-          }else{
+          } else{
             label = null
           }
 
@@ -50,7 +74,10 @@
           else ctx.fillStyle = "rgba(0,0,0,.2)"
           if (node.data.color=='none') ctx.fillStyle = "white"
 
-          if (node.data.shape=='dot'){
+          if (node.data.shape=='dot' && node.name == "center"){
+            gfx.oval(pt.x-x/2, pt.y-x/2, x,x, {fill:ctx.fillStyle})
+            nodeBoxes[node.name] = [pt.x-x/2, pt.y-x/2, x,x]
+          } else if (node.data.shape=='dot'){
             gfx.oval(pt.x-w/2, pt.y-w/2, w,w, {fill:ctx.fillStyle})
             nodeBoxes[node.name] = [pt.x-w/2, pt.y-w/2, w,w]
           }else{
@@ -86,7 +113,7 @@
 
           ctx.save()
             ctx.beginPath()
-            ctx.lineWidth = (!isNaN(weight)) ? parseFloat(weight) : 1
+            ctx.lineWidth = (!isNaN(weight)) ? parseFloat(weight) : 1.5
             ctx.strokeStyle = (color) ? color : "#cccccc"
             ctx.fillStyle = null
 
