@@ -20,12 +20,12 @@
 
   <header class="topnav">
     <div id="title">
-      <img src="../../SAPlogo2.png" alt="SAP Logo" id="logo">
+      <img src="../../assets/SAPlogo2.png" alt="SAP Logo" id="logo">
     </div>
 
     <div id="nav">
-       <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
-       <a href="" class="active"><i class="fas fa-share-alt"></i>All Services</a>
+       <a href="../PersonalGraph/main.html" class="active"><i class="fas fa-home"></i> Home</a>
+       <a href="./allServices.html" class="active"><i class="fas fa-share-alt"></i>All Services</a>
        <a href="" class="active"><i class="fas fa-cog"></i>Settings</a>
      </div>
 
@@ -33,36 +33,35 @@
        <i class="fas fa-search"></i>
        <input type="text" placeholder="Search...">
      </div>
-
   </header>
 
   <main>
     <div id="categoriesList">
           <h1><i class="fas fa-filter"></i> Filter By Category</h1>
-          <label class="container">Category 1
+          <label class="container">Counsellors
             <input type="checkbox" checked="checked">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Category 2
+          <label class="container">Note Taking
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Category 3
+          <label class="container">Test and Exam Booking
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Category 4
+          <label class="container">Building Accessibility
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Category 5
+          <label class="container">Documents
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
     </div>
 
     <div id="allServicesGraph">
-      <canvas id="viewport" width="900" height="800"></canvas>
+      <canvas id="viewport" width="1200" height="800"></canvas>
       <script src="graph.js"></script>
     </div>
   </main>

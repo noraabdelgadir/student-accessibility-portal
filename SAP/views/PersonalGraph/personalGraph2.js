@@ -7,10 +7,14 @@ $(document).ready(function(){
           center:{'mass':'.1','color':'#00215C','shape':'dot','label':'Student Name','size':''},
           cat1:{'mass':'1','color':'#008BB0','shape':'dot','label':'Counsellors'},
           cat2:{'mass':'1','color':'#008BB0','shape':'dot','label':'Test and Exam Accomodation'},
-          cat3:{'mass':'1','color':'#008BB0','shape':'dot','label':'Note Taking'}
+          cat3:{'mass':'1','color':'#008BB0','shape':'dot','label':'Note Taking'},
+          cat5:{'mass':'1','color':'#008BB0','shape':'dot','label':'Documents','link':'http://localhost:3030/views/CategoryGraph/categories.html'},
+          letterOfAccommodation:{'color': '#008BB0', 'shape': 'square', 'label': 'letter of accomodation'}
         },
         edges:{
-          center:{ cat1:{length:0.4}, cat2:{}, cat3:{length:0.4} }}
+          center:{ cat1:{length:0.5}, cat2:{}, cat3:{length:0.5}, cat5:{length:0.5} },
+          cat5:{ letterOfAccommodation:{} }
+        }
       };
   sys.graft(allServices);
 });
