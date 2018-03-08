@@ -42,11 +42,7 @@
 
             count++;
         })
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 0f49dae42c316fb42693a39819c7935d938a20a1
         // draw the nodes & save their bounds for edge drawing
         var nodeBoxes = {}
         particleSystem.eachNode(function(node, pt){
@@ -166,17 +162,6 @@
             selected = (nearest.distance < 50) ? nearest : null
 
             // selecting a node by clicking on it
-<<<<<<< HEAD
-            if (nearest && selected && nearest.node===selected.node) {
-              if(selected.node.name == "service1")
-              {
-                var service = document.getElementById('service1');
-                if (service.style.display === "none")
-                    service.style.display = "block";
-                else
-                    service.style.display = "none";
-              }
-=======
             //Assumes that the html element of the service is the same name as
             //the service
 
@@ -188,7 +173,6 @@
                   service.style.display = "block";
               else
                   service.style.display = "none";
->>>>>>> 0f49dae42c316fb42693a39819c7935d938a20a1
 
             }
             else if (selected.node.name == "service2") {

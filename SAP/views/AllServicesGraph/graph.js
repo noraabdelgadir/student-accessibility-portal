@@ -6,12 +6,13 @@ $(document).ready(function(){
         nodes:{
           center:{'mass':'3','color':'#00215C','shape':'dot','label':'All Accessibility Services'},
           cat1:{'mass':'1','color':'#008BB0','shape':'dot','label':'Counsellors'},
-          cat2:{'mass':'1','color':'#008BB0','shape':'dot','label':'Test and Exam Accomodation', link:'http://stackoverflow.com'},
+          cat2:{'mass':'1','color':'#008BB0','shape':'dot','label':'Test and Exam Accomodation'},
           cat3:{'mass':'1','color':'#008BB0','shape':'dot','label':'Note Taking'},
-          cat4:{'mass':'2','color':'#008BB0','shape':'dot','label':'Building Accessibility'}
+          cat4:{'mass':'1','color':'#008BB0','shape':'dot','label':'Building Accessibility'},
+          cat5:{'mass':'1','color':'#008BB0','shape':'dot','label':'Documents','link':'http://localhost:3030/views/CategoryGraph/categories.html'}
         },
         edges:{
-          center:{ cat1:{length:0.5}, cat2:{length:0.5}, cat3:{length:0.5}, cat4:{length:0.5} }
+          center:{ cat1:{length:0.5}, cat2:{length:0.5}, cat3:{length:0.5}, cat4:{length:0.5}, cat5:{length:0.5} }
         }
       };
   sys.graft(allServices);
