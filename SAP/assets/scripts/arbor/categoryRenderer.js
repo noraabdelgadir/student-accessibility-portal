@@ -42,7 +42,11 @@
 
             count++;
         })
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 0f49dae42c316fb42693a39819c7935d938a20a1
         // draw the nodes & save their bounds for edge drawing
         var nodeBoxes = {}
         particleSystem.eachNode(function(node, pt){
@@ -162,6 +166,7 @@
             selected = (nearest.distance < 50) ? nearest : null
 
             // selecting a node by clicking on it
+<<<<<<< HEAD
             if (nearest && selected && nearest.node===selected.node) {
               if(selected.node.name == "service1")
               {
@@ -171,8 +176,51 @@
                 else
                     service.style.display = "none";
               }
+=======
+            //Assumes that the html element of the service is the same name as
+            //the service
+
+            if(selected.node.name == "service1"){
+              document.getElementById("letter-of-accomodation").style.display = "none";
+              document.getElementById("saved").style.display = "none";
+              var service = document.getElementById("verification-of-illiness");
+              if (service.style.display === "none")
+                  service.style.display = "block";
+              else
+                  service.style.display = "none";
+>>>>>>> 0f49dae42c316fb42693a39819c7935d938a20a1
 
             }
+            else if (selected.node.name == "service2") {
+              document.getElementById("verification-of-illiness").style.display = "none";
+              document.getElementById("saved").style.display = "none";
+
+              var service = document.getElementById("letter-of-accomodation");
+              if (service.style.display === "none")
+                  service.style.display = "block";
+              else
+                  service.style.display = "none";
+
+            }
+            else if (selected.node.name == "service3") {
+              document.getElementById("verification-of-illiness").style.display = "none";
+              document.getElementById("letter-of-accomodation").style.display = "none";
+
+              var service = document.getElementById("saved");
+              if (service.style.display === "none")
+                  service.style.display = "block";
+              else
+                  service.style.display = "none";
+
+            }
+
+            // if (nearest && selected && nearest.node===selected.node) {
+            //   var service = document.getElementById(selected.node.name);
+            //   if (service.style.display === "none")
+            //       service.style.display = "block";
+            //   else
+            //       service.style.display = "none";
+            // }
 
             $(canvas).bind('mousemove', handler.dragged)
             $(window).bind('mouseup', handler.dropped)
