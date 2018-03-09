@@ -42,7 +42,7 @@
 
             count++;
         })
-        
+
         // draw the nodes & save their bounds for edge drawing
         var nodeBoxes = {}
         particleSystem.eachNode(function(node, pt){
