@@ -1,0 +1,83 @@
+html {
+  font:16px Arial, sans-serif;
+  overflow: hidden;
+}
+
+body{
+  margin:0;
+  font:16px Arial, sans-serif;
+  background:#e5e5e5;
+}
+
+/*-------------------------NAV BAR/HEADER-------------------------*/
+.topnav {
+	overflow: hidden;
+	background-color: #002A5C;
+	margin-bottom:1.5em;
+	display: grid;
+	grid-template-columns: 30% auto 20%;
+	font-size: 1.3rem;
+}
+
+.topnav a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 24px 28px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #7BA4D9;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+#nav {
+	grid-column-start: 2;
+	padding: 0 5rem;
+}
+
+#title {
+		grid-column-start: 1;
+		padding: 1rem;
+}
+
+#logo {
+	width: 400px;
+}
+
+header{
+	color: white;
+}
+
+header svg{
+	color: white;
+	margin-right:  0.5rem;
+}
+
+#searchicon{
+	height:2%;
+	width:2%;
+}
+
+#search{
+    text-decoration: none;
+		margin: auto;
+		padding: 0.3rem;
+		background: white;
+		font-size: 1.3rem;
+}
+
+#search > input {
+	padding:0.5em;
+	border: none;
+}
+
+#search svg{
+	margin: 0 0.5em;
+	color: #002A5C;
+}

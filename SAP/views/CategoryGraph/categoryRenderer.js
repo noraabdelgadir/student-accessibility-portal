@@ -20,6 +20,29 @@
 
         gfx.clear() // convenience ƒ: clears the whole canvas rect
 
+        var count = 0;
+        particleSystem.eachNode(function(node, pt){
+            var middleNode = particleSystem.getNode("category");
+            var x = middleNode.p.x;
+            var y = middleNode.p.y;
+
+            if (node.data.parent != undefined){
+              var parent = particleSystem.getNode(node.data.parent);
+              x = parent.p.x;
+              y = (1/y) + parent.p.y;
+            }
+
+            var angle = (count / (4/2)) * Math.PI;
+
+            var point = arbor.Point((1 * Math.cos(angle)) + x, (1 * Math.sin(angle)) + y);
+
+            if (node.name != "category"){
+              node.p = point;
+            }
+
+            count++;
+        })
+
         // draw the nodes & save their bounds for edge drawing
         var nodeBoxes = {}
         particleSystem.eachNode(function(node, pt){

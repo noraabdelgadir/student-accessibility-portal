@@ -6,66 +6,65 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>All Services</title>
 	<link rel="stylesheet" href="graph.css" type="text/css">
-  <link rel="stylesheet" href="navbar.css" type="text/css">
+  <link rel="stylesheet" href="../../assets/styles/navbar.css" type="text/css">
 
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
   <script src="../../assets/scripts/arbor/arbor.js"></script>
   <script src="../../assets/scripts/arbor/graphics.js"></script>
-  <script src="../../assets/scripts/arbor/renderer.js"></script>
+  <script src="../../assets/scripts/arbor/toCategoryRenderer.js"></script>
 
 </head>
-<header>
-  <div id="title">Student Accessibility Services</div>
-</header>
+
 <body>
 
+  <header class="topnav">
+    <div id="title">
+      <img src="../../assets/SAPlogo2.png" alt="SAP Logo" id="logo">
+    </div>
 
- <div class="topnav">
-    <a href="#home" class="active">Home</a>
-    <a href="" class="active">All Services</a>
-    <a href="" class="active">Settings</a>
-    <input type="text" placeholder="Search...">
-  </div>
+    <div id="nav">
+       <a href="../PersonalGraph/main.html" class="active"><i class="fas fa-home"></i> Home</a>
+       <a href="./allServices.html" class="active"><i class="fas fa-share-alt"></i>All Services</a>
+       <a href="" class="active"><i class="fas fa-cog"></i>Settings</a>
+     </div>
 
+     <div id="search">
+       <i class="fas fa-search"></i>
+       <input type="text" placeholder="Search...">
+     </div>
+  </header>
 
-<!-- 
-  <nav id="menu">
-      <ul class="topnav" id="myTopnav">
-          <li class="navitem"><a href="#profilepage">Home</a></li>
-          <li class="navitem"><a href= "#aboutme">Profile</a></li>
-          <li class="navitem"><a href="#feed">Feed</a></li>
-          <li class="icon">
-              <a href="javascript:void(0);" style="font-size:1.5em;" onclick="DropDown()">☰</a>
-          </li>    
-      
-      </ul>
-  </nav>
+  <main>
+    <div id="categoriesList">
+          <h1><i class="fas fa-filter"></i> Filter By Category</h1>
+          <label class="container">Counsellors
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Note Taking
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Test and Exam Booking
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Building Accessibility
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Documents
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+    </div>
 
--->
-  <div id="categoriesList">
-        <h1>Categories</h1>
-        <label class="container">Category 1
-          <input type="checkbox" checked="checked">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container">Category 2
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container">Category 3
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container">Category 4
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-  </div>
-
-  <div id="allServicesGraph">
-    <canvas id="viewport" width="800" height="600"></canvas>
-    <script src="./graph.js"></script>
-  </div>
+    <div id="allServicesGraph">
+      <canvas id="viewport" width="1200" height="800"></canvas>
+      <script src="graph.js"></script>
+    </div>
+  </main>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 $(document).ready(function(){
-  var sys = arbor.ParticleSystem(1000, 400, 1);
-  sys.parameters({gravity: true});
+  var sys = arbor.ParticleSystem(10000, 400, 1);
+  sys.parameters({repulsion: 10000, gravity: false, dt: 0.35});
   sys.renderer = Renderer("#viewport");
 
   // sample categories and its services

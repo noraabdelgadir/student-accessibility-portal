@@ -5,6 +5,8 @@
       <title>Categories</title>
         <link rel="stylesheet" href="categories.css" type="text/css">
         <link rel="stylesheet" href="../../assets/styles/navbar.css" type="text/css">
+
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
         <script language="javascript" type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
         <script language="javascript" type="text/javascript" src="../../assets/scripts/arbor/arbor.js" ></script>
         <script language="javascript" type="text/javascript" src="../../assets/scripts/arbor/graphics.js" ></script>
@@ -15,12 +17,12 @@
       <!-- Navigation Bar <!-->
       <header class="topnav">
         <div id="title">
-          <img src="../../SAPlogo2.png" alt="SAP Logo" id="logo">
+          <img src="../../assets/SAPlogo2.png" alt="SAP Logo" id="logo">
         </div>
 
         <div id="nav">
-           <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
-           <a href="" class="active"><i class="fas fa-share-alt"></i>All Services</a>
+          <a href="../PersonalGraph/personalGraph.html" class="active"><i class="fas fa-home"></i> Home</a>
+          <a href="../AllServicesGraph/allServices.html" class="active"><i class="fas fa-share-alt"></i>All Services</a>
            <a href="" class="active"><i class="fas fa-cog"></i>Settings</a>
          </div>
 
@@ -28,12 +30,12 @@
            <i class="fas fa-search"></i>
            <input type="text" placeholder="Search...">
          </div>
-
       </header>
-      <div id="container" style="width:100%;">
+
+      <div id="container" style="width:100%; margin: 2rem;">
 
         <!-- Main graph <!-->
-        <div id="graph" style="float:left; width:50%;">
+        <div id="graph" style="float:left; width:40%; height: 800px; background:white;">
           <canvas id="viewport" width="600" height="600"></canvas>
           <script src="categories.js"></script>
         </div>
@@ -44,10 +46,23 @@
           <button>Favourite</button>
           <button>Download</button>
         </div>
-        <div id="letterOfAccomodation" style="float:right; width:50%; display: none;">
-          <h1>The file will be here</h1>
-          <button>Favourite</button>
-          <button>Download</button>
+        <div id="letter-of-accomodation" style="display: none;"  class="service">
+            <h1>Letter of Accomodation</h1>
+            <p>
+              Your Letter of Accommodation informs your course instructor(s) about your accommodations needs in the classroom so that they can better meet your needs.<br>
+              The Letter maintains confidentiality about the nature of your disability, but informs an instructor about a student’s relevant accommodations.<br>
+              For example, your instructor needs to know:
+
+              <ul>
+                <li>What accommodations you may need in class</li>
+                <li>To send a test to the Test and Exam Centre</li>
+                <li>To approve specific test and exam accommodations</li>
+              </ul>
+
+              You can download the Letter of Accommodation by click download below
+            </p>
+            <button onClick="alert('Letter of Accommodation has been added to your favourites')">Favourite</button>
+            <button>Download</button>
         </div>
         <div id="saved" style="float:right; width:50%; display: none;">
           <h1>View your saved notes here</h1>
