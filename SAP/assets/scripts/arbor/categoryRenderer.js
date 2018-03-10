@@ -138,50 +138,17 @@
             if (!nearest.node) return false
             selected = (nearest.distance < 50) ? nearest : null
 
-            // selecting a node by clicking on it
-            //Assumes that the html element of the service is the same name as
-            //the service
-
-            if(selected.node.name == "service1"){
-              document.getElementById("letter-of-accomodation").style.display = "none";
-              document.getElementById("saved").style.display = "none";
-              var service = document.getElementById("verification-of-illiness");
+            if (nearest && selected && nearest.node===selected.node) {
+              var service = document.getElementById(selected.node.name);
+              var container = document.getElementById('container').children;
+              $.each(container, function(i, item) {
+                if(item.id != 'graph') item.style.display = "none";
+              });
               if (service.style.display === "none")
                   service.style.display = "block";
               else
                   service.style.display = "none";
-
             }
-            else if (selected.node.name == "service2") {
-              document.getElementById("verification-of-illiness").style.display = "none";
-              document.getElementById("saved").style.display = "none";
-
-              var service = document.getElementById("letter-of-accomodation");
-              if (service.style.display === "none")
-                  service.style.display = "block";
-              else
-                  service.style.display = "none";
-
-            }
-            else if (selected.node.name == "service3") {
-              document.getElementById("verification-of-illiness").style.display = "none";
-              document.getElementById("letter-of-accomodation").style.display = "none";
-
-              var service = document.getElementById("saved");
-              if (service.style.display === "none")
-                  service.style.display = "block";
-              else
-                  service.style.display = "none";
-
-            }
-
-            // if (nearest && selected && nearest.node===selected.node) {
-            //   var service = document.getElementById(selected.node.name);
-            //   if (service.style.display === "none")
-            //       service.style.display = "block";
-            //   else
-            //       service.style.display = "none";
-            // }
 
             $(canvas).bind('mousemove', handler.dragged)
             $(window).bind('mouseup', handler.dropped)
