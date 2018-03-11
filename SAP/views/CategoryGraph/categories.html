@@ -3,7 +3,7 @@
     <head>
       <meta name='view' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
       <title>Categories</title>
-        <link rel="stylesheet" href="categories.css" type="text/css">
+        <link rel="stylesheet" href="../assets/styles/categories.css" type="text/css">
         <link rel="stylesheet" href="../../assets/styles/navbar.css" type="text/css">
 
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
@@ -41,13 +41,12 @@
         </div>
 
         <!-- Services <!-->
-        <section id="services">
-          <div id="verification-of-illiness" style="width:50%; display: none;" class="service">
-            <h1>Verification Of Illness</h1>
-            <button>Favourite</button>
-            <button>Download</button>
-          </div>
-          <div id="letter-of-accomodation" style="display: none;"  class="service">
+        <div id="verificationOfIlliness" style="float:right; width:50%; display: none;">
+          <h1>The file will be here</h1>
+          <button>Favourite</button>
+          <button>Download</button>
+        </div>
+        <div id="letterOfAccomodation" style="display: none;"  class="service">
             <h1>Letter of Accomodation</h1>
             <p>
               Your Letter of Accommodation informs your course instructor(s) about your accommodations needs in the classroom so that they can better meet your needs.<br>
@@ -55,22 +54,36 @@
               For example, your instructor needs to know:
 
               <ul>
-              <li>What accommodations you may need in class</li>
-              <li>To send a test to the Test and Exam Centre</li>
-              <li>To approve specific test and exam accommodations</li>
+                <li>What accommodations you may need in class</li>
+                <li>To send a test to the Test and Exam Centre</li>
+                <li>To approve specific test and exam accommodations</li>
               </ul>
 
               You can download the Letter of Accommodation by click download below
             </p>
             <button onClick="alert('Letter of Accommodation has been added to your favourites')">Favourite</button>
             <button>Download</button>
-          </div>
-          <div id="saved" style="width:50%; display: none;" class="service">
-            <h1>Saved Notes</h1>
-            <button>Favourite</button>
-            <button>Upload</button>
-          </div>
-       </section>
+        </div>
+        <div id="saved" style="float:right; width:50%; display: none;">
+          <h1>View your saved notes here</h1>
+          <button>Favourite</button>
+          <button>Upload</button>
+        </div>
+        <div id="learningStrategist" style="float:right; width:50%; display: none;">
+          <h1>View learning stategist contact info</h1>
+          <button>Favourite</button>
+          <button>Book appointment</button>
+        </div>
+        <div id="adaptiveTechnologist" style="float:right; width:50%; display: none;">
+          <h1>View adaptive technologist contact info</h1>
+          <button>Favourite</button>
+          <button>Book appointment</button>
+        </div>
+        <div id="accessibilityAdvisors" style="float:right; width:50%; display: none;">
+          <h1>View accessibility advisor contact info</h1>
+          <button>Favourite</button>
+          <button>Book appointment</button>
+        </div>
       </div>
     </body>
 </html>
