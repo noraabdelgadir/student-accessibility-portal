@@ -7,7 +7,7 @@ $(document).ready(function(){
   var data = {
      nodes : {
        documents: {'mass':'1', 'color': '#002A5C', 'shape': 'dot', 'label': 'documents'},
-       verificationOfIlliness: {'color': '#008BB0', 'shape': 'square', 'label': 'verification of illiness'},
+       verificationOfIllness: {'color': '#008BB0', 'shape': 'square', 'label': 'verification of illiness'},
        letterOfAccomodation:{'color': '#008BB0', 'shape': 'square', 'label': 'letter of accomodation'},
        saved:{'color': '#008BB0', 'shape': 'square', 'label': 'Saved'},
      },
@@ -28,7 +28,7 @@ $(document).ready(function(){
             return sParameterName[1];
         }
     }
-  }​
+  }
 
   function addServices(cat){
     if (cat == 'documents') {
