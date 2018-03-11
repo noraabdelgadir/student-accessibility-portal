@@ -37,33 +37,33 @@ In addition to this, we assigned the following roles:
 
 Meetings:
 
-- February 15th 12-1pm at BA2270 in person
-⋅⋅⋅Plan and set milestones for each week for this iteration
-⋅⋅⋅Set up coding envrionments
-⋅⋅⋅Determine font and color schemes and stack to use for the product
-- February 20 (online)
-⋅⋅⋅Check in on the progress of each task and make adjustments to requirements if needed
-- February 27th (online)
-⋅⋅⋅Check in on the progress of each task
-- March 1st 12-1pm at BA2270 in person
-⋅⋅⋅To review progress of tasks (review how much of our pages we have completed) 
-⋅⋅⋅Make sure everything is on track
-⋅⋅⋅To offer help to those who need assistance with their part
-- March 6th 12-1pm at BA2270 in person
-⋅⋅⋅Integrate and link all of the Front End pages
-⋅⋅⋅Finalize website styling and make sure all are in uniform/consistent
-⋅⋅⋅Start the video for our demo
-- March 8th 12-1pm at BA2270 in person
-⋅⋅⋅Last minute review of project
-⋅⋅⋅Make sure front end is working before submission
-⋅⋅⋅Write the review.md 
-⋅⋅⋅Final edits on video 
+* February 15th 12-1pm at BA2270 in person
+  * Plan and set milestones for each week for this iteration
+  * Set up coding envrionments
+  * Determine font and color schemes and stack to use for the product
+* February 20 (online)
+  * Check in on the progress of each task and make adjustments to requirements if needed
+* February 27th (online)
+  * Check in on the progress of each task
+* March 1st 12-1pm at BA2270 in person
+  * To review progress of tasks (review how much of our pages we have completed) 
+  * Make sure everything is on track
+  * To offer help to those who need assistance with their part
+* March 6th 12-1pm at BA2270 in person
+  * Integrate and link all of the Front End pages
+  * Finalize website styling and make sure all are in uniform/consistent
+  * Start the video for our demo
+* March 8th 12-1pm at BA2270 in person
+  * Last minute review of project
+  * Make sure front end is working before submission
+  * Write the review.md 
+  * Final edits on video 
 
 
 #### Artifacts
 
 - Documentation of our meetings will all be in Google Drive which will all be linked in review.md. This will be used to keep track of what is done and what needs to be done after each meeting.
-⋅⋅⋅within this document we will have a to do list, schedule, and a table that marks the current status of a task (ie. in progress, not started, complete)
+  * within this document we will have a to do list, schedule, and a table that marks the current status of a task (ie. in progress, not started, complete)
 - All tasks in our meeting documents will have deadlines and will be ranked with priorities to make sure we meet our milestones. Our product managers will be in charge of determining the tasks and assigning priorities.
 - All tasks will be evenly assigned to pairs in the team based on skills and interest. If there are any issues or conflicts that arise, our project manager will mediate and assign the tasks.
 - Slack channel will be used to contact the team for any needs and/or issues throughout the iteration.
@@ -74,7 +74,7 @@ Meetings:
 - One person will create the basic structure of the project on GitHub and set up the initial environment
 - Our group will then be divided into 3 pairs and each pair will have their own fork of the master repository and are assigned Github issues/tasks to work on 
 - After completing their part, the sub-team will close their Github issues and will open a pull-request but only after reviewing changes as a pair in a meeting (either online or in person)
-⋅⋅⋅any conflicts with the pull-request should be fixed by this pair during this meeting
+  * any conflicts with the pull-request should be fixed by this pair during this meeting
 - In person, a member who isn’t part of the pair will review the code then after the review, if it is good, they will merge code to the master repo, if it isn’t then the pair will fix their code during the meeting and submit another pull request
 - We chose this workflow because we could make sure each pair’s part works before including it in master. This ensures master is our "source of truth" and does not havy any bugs. Also, having someone from outside the pair review the code is helpful because this increases the change of catching any bugs.
 
@@ -110,6 +110,3 @@ The items are ordered in chronological order of which tasks need to be completed
 - We will create a video to demonstrate the product. The video can be found in review.md when completed
 - Screen caps of website features that was not captured in our video will be added in review.md artifacts. This is so that the graders can see all aspects of our product that have been completed.
 - Styling Guidelines will also be added to review.md when finalized. Since we are focusing on front end this allows us to have a set of rules to follow when desigining the pages.
-
-
-
