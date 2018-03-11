@@ -58,24 +58,24 @@ List any process-related changes you are planning to make (if there are any)
 
 The most important goals and tasks that we completed are listed below
 
-[x]	Fill out plan.md on February 8th
-[x]	Plan the front end and assign tasks to each pair
+- [x]	Fill out plan.md on February 8th
+- [x]	Plan the front end and assign tasks to each pair
   *	This includes the style guideline. We used the UofT guideline found here (https://www.utm.utoronto.ca/sites/files/default/public/shared/advancement/pdfs/UofT%20Style%20Guide%20%2B%20Boundless%20Guide%20Feb%202012.pdf) but the important ones were:
   *	Colors - https://drive.google.com/open?id=1DY4e3-LNuZeTWMEUKEQGycu2U6pTqk3v
   *	Fonts - https://drive.google.com/file/d/1nUZQJ9bw-GvwdBwPPW8hnpiPk8g0tneG/view?usp=sharing
-[x]	Determine github workflow: like the assignment where we fork and then merge together
-[x] Determine structure of files (MVC)
-[x]	Finish all polished front end pages by Tuesday, March 6
-[x]	Finish and send Nav Bar and headers for everybody’s page (Nicole and Nadine) by Monday, March 5
-[x]	Create a voice over script for video by Tuesday, March 6 (Everyone)
+- [x]	Determine github workflow: like the assignment where we fork and then merge together
+- [x] Determine structure of files (MVC)
+- [x]	Finish all polished front end pages by Tuesday, March 6
+- [x]	Finish and send Nav Bar and headers for everybody’s page (Nicole and Nadine) by Monday, March 5
+- [x]	Create a voice over script for video by Tuesday, March 6 (Everyone)
   *	This can be found here: https://drive.google.com/open?id=1eU9rJGJMMUXNXhAHGsbX2b8Flt8HskYA9S3hHDQvUa0
-[x]	Film a video of the workflow of our prototype on Wednesday, March 7
+- [x]	Film a video of the workflow of our prototype on Wednesday, March 7
   *	Video of our demo can be found in the following link: https://www.dropbox.com/s/ttyakwldhcmriup/CSC301%20Group%20121%20Deliverable%202.mov?dl=0
-[x]	Link all of the nodes and pages properly on Tuesday, March 6
-[x]	Film the introduction skit for the video on Thursday, March 8
-[x]	Fill out plan and iteration.md on Thursday, March 8
-[x]	Combine and put together our deliverable submission Thursday, March 8
-[x]	Commit and merge on Github on Friday, March 9
+- [x]	Link all of the nodes and pages properly on Tuesday, March 6
+- [x]	Film the introduction skit for the video on Thursday, March 8
+- [x]	Fill out plan and iteration.md on Thursday, March 8
+- [x]	Combine and put together our deliverable submission Thursday, March 8
+- [x]	Commit and merge on Github on Friday, March 9
 
 Meeting documents of our in person Thursday meetings that list and state meeting notes, status of tasks, and goals/to-do list:
 *	Meeting 1: https://docs.google.com/document/d/1FRq19zE9ZXFys5GLGv8vO_RzwEBVPfhBcXIewvWb4YA/edit?usp=sharing
