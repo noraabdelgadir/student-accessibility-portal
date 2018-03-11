@@ -22,6 +22,7 @@
 
         var count = 0;
         particleSystem.eachNode(function(node, pt){
+
             var middleNode = particleSystem.getNode("documents");
             var x = middleNode.p.x;
             var y = middleNode.p.y;
