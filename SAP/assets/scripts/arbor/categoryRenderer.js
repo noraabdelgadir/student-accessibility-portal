@@ -162,9 +162,10 @@
             if (!nearest.node) return false
             selected = (nearest.distance < 50) ? nearest : null
 
-            if (nearest && selected && nearest.node===selected.node) {
+            var middleNode = particleSystem.getNode("middleNode");
+            if (nearest && selected && nearest.node===selected.node &&
+              selected.node != middleNode) {
               var service = document.getElementById(selected.node.name);
-              console.log(selected.node.name);
               var container = document.getElementById('container').children;
               $.each(container, function(i, item) {
                 if(item.id != 'graph') item.style.display = "none";
