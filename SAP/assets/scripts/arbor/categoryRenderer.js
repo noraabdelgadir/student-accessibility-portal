@@ -23,7 +23,7 @@
         var count = 0;
         particleSystem.eachNode(function(node, pt){
 
-            var middleNode = particleSystem.getNode("documents");
+            var middleNode = particleSystem.getNode("middleNode");
             var x = middleNode.p.x;
             var y = middleNode.p.y;
 
@@ -37,7 +37,7 @@
 
             var point = arbor.Point((1 * Math.cos(angle)) + x, (1 * Math.sin(angle)) + y);
 
-            if (node.name != "documents"){
+            if (node.name != "middleNode"){
               node.p = point;
             }
 
