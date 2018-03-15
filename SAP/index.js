@@ -3,6 +3,7 @@
 //setup all the variables needed
 var express = require('express');
 var path = require('path');
+var mongoose = require('mongoose');
 var app = express();
 
 var server = require('http').Server(app);
@@ -57,5 +58,3 @@ function addUser(request, response){
   datas[username] = newInput
 
 }
-
-
