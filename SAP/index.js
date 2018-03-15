@@ -7,6 +7,12 @@ var app = express();
 
 var server = require('http').Server(app);
 
+//Set up default db connection and create error handlers
+
+var mongoDB = "mongodb://sapuser1:sapuser1@ds115569.mlab.com:15569/sap";
+mongoose.connect(mongoDB);
+mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 //serve as static files for now
 app.use('/views',express.static(path.join(__dirname, '/views')));
 app.use('/assets',express.static(path.join(__dirname, '/assets')));
@@ -44,3 +50,5 @@ function addUser(request, response){
   datas[username] = newInput
 
 }
+
+
