@@ -6,9 +6,7 @@ var path = require('path');
 var app = express();
 
 var server = require('http').Server(app);
-var session = require('express-session');
 var routes = require('./routes/index.routes');
-var auth = require('./controllers/authentication.controller');
 
 //Set up default db connection and create error handlers
 
@@ -30,6 +28,9 @@ app.use('/assets',express.static(path.join(__dirname, '/assets')));
 /*app.get('/', (req, res) => {
   res.send('NOTHING HERE YET')
 });*/
+
+// Definition of Routing of back-ends.
+app.use('/api', routes);
 
 var server = app.listen(3030, function() {
   console.log('Running on 127.0.0.1:%s', server.address().port);
