@@ -31,14 +31,14 @@ List process-related (i.e. team organization) decisions that, in retrospect, tur
 
 List process-related (i.e. team organization) decisions that, in retrospect, were not as successful as you thought they would be.
 
-*	Using React
+- Using React
   * It was too bloated for the purposes of our project
   * Not everyone was comfortable with using it, as we have different skill levels
   * Solution: discard React and use a MEAN stack instead
-*	In the first week we decided to not have other roles such as project manager etc.
+- In the first week we decided to not have other roles such as project manager etc.
   * We realized it was hard to stay organized especially in a team as large as 6 people and it was difficult to determine which tasks we needed to prioritize
   * In the middle of this iteration we added more roles for each team member (as seen in plan.md)
-*	Having a sign-in page
+- Having a sign-in page
   * Since we are using utor ids we realized we do not need users to sign up with a username or password
   * We will replace it will a “register for accessibility services” page, this makes more sense for our product since UofT requires you to first register before accessing the various services
 
@@ -46,9 +46,9 @@ List process-related (i.e. team organization) decisions that, in retrospect, wer
 
 List any process-related changes you are planning to make (if there are any)
 
-*	Increase the number of in-person meetings when preparing backend of the project
+- Increase the number of in-person meetings when preparing backend of the project
   * In-person meetings provide more efficient communications and code integration compared to online discussion and meetings, which is required for backend code writing and testing
-*	Increase number of code-review meetings
+- Increase number of code-review meetings
   * This is so we are following the same conventions and ensures that our code is clean and readable
   * We realized that we need to understand each others code better in order to integrate each of our parts, code-review would allow us to sync our code
 
@@ -88,21 +88,22 @@ Screen-caps are provided below of our Sign Up/Register page which was not captur
 
 #### Goals and/or tasks that were planned but not met/completed:
 
-*	Create search function for our web pages
+- Create search function for our web pages
   *	This is planned to be finished in iteration 3
   *	This feature is a bonus feature that is not imperative for the operation of the website, users are still able to understand how the website works and we are able to create a demo without this feature which is why we are giving it a low priority
-*	Filtering categories in the all services page
+- Filtering categories in the all services page
   *	Will be fixed by the next iteration
   *	We ran into a few issues with the API we are using to render our graphs. Since the graphical interface is the most important element of our product, we spent our time fixing this issue. Additionally, this feature relies on the graph interface to work.
 
 ## Meeting Highlights
 
 Going into the next iteration, our main insights are:
-*	Continue to meet often and stick to assigned roles
+
+- Continue to meet often and stick to assigned roles
   *	For this iteration we found that having frequent meetings work for us so we want to continue to do this for the next iteration
   *	Having a project manager, product owner, research and data collectors, and technical expert was integral to this iterations success so we want to ensure that we are sticking to these roles as we move into the next iteration
-*	Work on the back-end (e.g. how to keep each student’s information) and integrate it with the front-end
+- Work on the back-end (e.g. how to keep each student’s information) and integrate it with the front-end
   *	We have to spend some time thinking about the structure of our database because for this iteration most pages are static files with some hard coded data
-*	Do more research on accessibility services and implement more services
+- Do more research on accessibility services and implement more services
   *	We realized as we are working on the front end that we are missing important data that would populate our graphs
   *	Through this research we will also figure out the best way to structure our graphs (ie. which services should be the parent nodes, which services should be sub-services or the leaf nodes)
