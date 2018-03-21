@@ -21,7 +21,7 @@ $(document).ready(function() {
   $("#accessibilityAdvisors").load("../../txtFiles/accessibilityAdvisor.txt");
 
   // Test and Exam Accommodation
-  // $("#").load("../../txtFiles/accommodationRenewal.txt");
+  $("#accommodationRenewal").load("../../txtFiles/accommodationRenewal.txt");
   
   // $("#").load("../../txtFiles/.txt");
 
