@@ -1,0 +1,15 @@
+If you wish to submit in person, you can scan and upload at 455 Spadina Avenue, 4th floor, suite 400.
+<br>
+Otherwise if you want to submit online, make sure before submitting:
+<br>
+<ul>
+<li>Handwritten notes a legible and a valid format (PDF, JPEG, JPG, BMP, PNG, RAR, or TIF).</li>
+<li>Any image files are clear.</li>
+<li> Typed notes can be in PPT, PPTX, DOCX, TXT, RFT, and XLSX.</li>
+<li>File names are 30 characters in length</li>
+<li>You include the course code and lecture number such as: ECO201Y1 DD-MM-YY</li>
+</ul>
+<br>
+Keep in mind you can only upload 10 mb at time.
+<br>
+To upload notes online, please click the button below.

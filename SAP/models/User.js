@@ -25,7 +25,8 @@ var UserSchema = new Schema(
             type: String, required: true
         },
         favourites: {
-            type: Array
+            nodes: Array,
+            edges: Array
         },
         admin: {
         	type: Boolean, required: true, default: false

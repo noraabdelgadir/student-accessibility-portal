@@ -4,7 +4,7 @@ $(document).ready(function(){
   sys.renderer = Renderer("#viewport");
   var allServices = {
         nodes:{
-          center:{'mass':'3','color':'#00215C','shape':'dot','label':'All Accessibility Services'},
+          center:{mass:'3',color:'#00215C',shape:'dot',label:'All Accessibility Services'},
           cat1:{'mass':'1','color':'#008BB0','shape':'dot','label':'Counsellors','link':'http://localhost:3030/views/CategoryGraph/categories.html?category=counsellors'},
           cat2:{'mass':'1','color':'#008BB0','shape':'dot','label':'Test and Exam Accomodation'},
           cat3:{'mass':'1','color':'#008BB0','shape':'dot','label':'Note Taking'},

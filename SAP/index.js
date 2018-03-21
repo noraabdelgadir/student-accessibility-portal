@@ -17,6 +17,7 @@ mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection 
 
 //Database models
 var Users = require('./models/User');
+var Graphs = require('./models/Graph');
 
 //serve as static files for now
 app.use('/views',express.static(path.join(__dirname, '/views')));
@@ -24,14 +25,14 @@ app.use('/assets',express.static(path.join(__dirname, '/assets')));
 
 //serve directory for assets
 //app.use(express.static(__dirname + '/assets'));
-//app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/'));
 
 /*app.get('/', (req, res) => {
   res.send('NOTHING HERE YET')
 });*/
 
 // Definition of Routing of back-ends.
-app.use('/api', routes);
+app.use('', routes);
 
 var server = app.listen(3030, function() {
   console.log('Running on 127.0.0.1:%s', server.address().port);

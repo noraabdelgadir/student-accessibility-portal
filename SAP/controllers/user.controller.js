@@ -14,7 +14,6 @@ function findbyUtor(req, res){
     User.find({email: req.params.utorid},function(err, users) {
         if (err) throw err;
           res.send(users);
-
     });
 }
 
@@ -37,6 +36,5 @@ function addUser (req, res, next){
         return next();
     });
 }
-
 
 module.exports = {listUsers, findbyUtor, addUser};
