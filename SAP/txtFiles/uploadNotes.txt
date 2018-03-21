@@ -1,3 +1,4 @@
+<h1>Upload Notes</h1>
 If you wish to submit in person, you can scan and upload at 455 Spadina Avenue, 4th floor, suite 400.
 <br>
 Otherwise if you want to submit online, make sure before submitting:
@@ -13,3 +14,4 @@ Otherwise if you want to submit online, make sure before submitting:
 Keep in mind you can only upload 10 mb at time.
 <br>
 To upload notes online, please click the button below.
+<button onclick="location.href='https://sites.studentlife.utoronto.ca/accessibility/vollogin.aspx';">Upload</button>
