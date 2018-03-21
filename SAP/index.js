@@ -40,13 +40,13 @@ var server = app.listen(3030, function() {
 
 // meta data
 var datas = {"guest": {"password" : "guest", "firstname" : "guest", "lastname": "guest"}}
-app.get('/all', sendAll);
-
-app.get('/add/:user/:pw/:first/:last', addUser);
-
-function sendAll(request, response) {
-  response.send(datas);
-}
+// app.get('/all', sendAll);
+//
+// app.get('/add/:user/:pw/:first/:last', addUser);
+//
+// function sendAll(request, response) {
+//   response.send(datas);
+// }
 
 function addUser(request, response){
   var username = request.params.user;
@@ -58,4 +58,20 @@ function addUser(request, response){
 
   datas[username] = newInput
 
+}
+
+//login stuff
+
+var currentUser = 'none';
+
+app.get('/curUser', currentUser);
+
+app.get('/curUser/:user', newUser);
+
+function currentUser(request, response) {
+  response.send(currentUser);
+}
+
+function currentUser(request, response) {
+  currentUSer = request.params.user;
 }
