@@ -17,8 +17,12 @@
   "author": "Team 21",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "mongo": "^0.1.0",
-    "mongoose": "^4.8.6"
+    "mongoose": "^4.8.6",
+    "node-php": "0.0.1",
+    "php": "0.0.1",
+    "php-node": "0.0.2"
   }
 }

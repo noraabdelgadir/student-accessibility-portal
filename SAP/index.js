@@ -4,6 +4,7 @@
 var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
+var session = require('express-session');
 var app = express();
 
 var server = require('http').Server(app);
@@ -22,6 +23,8 @@ var Graphs = require('./models/Graph');
 //serve as static files for now
 app.use('/views',express.static(path.join(__dirname, '/views')));
 app.use('/assets',express.static(path.join(__dirname, '/assets')));
+
+app.use(session({secret:"HEEEY",resave:false, saveUninitialized:false}))
 
 //serve directory for assets
 //app.use(express.static(__dirname + '/assets'));
@@ -56,3 +59,21 @@ function addUser(request, response){
 
 
 // sign up
+//
+// app.post('/login' ,function(req, res){
+//   var username = req.params.username;
+//   var password = req.params.password;
+//   console.log(username);
+//
+//   User.find({utorid: username, password: password},function(err, users) {
+//       if (err) throw err;
+//       req.session.user = users;
+//       console.log("HELLO");
+//
+//   })
+//   console.log("aw");
+//   // res.redirect('/main');
+//
+//
+//
+// });

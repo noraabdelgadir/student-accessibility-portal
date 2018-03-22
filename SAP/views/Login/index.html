@@ -52,11 +52,12 @@
 <div class="login-page">
   <div class="form">
 
-    <form class="login-form">
+    <form class="login-form" action="/user/login" method="post">
       <input type="text" name="username" placeholder="username"/>
       <input type="password" name="password" placeholder="password"/>
 
-      <input type="button" onclick="checkLogin(this.form)" value="Login"/>
+      <!-- <input type="button" onclick="checkLogin(this.form)" value="Login"/> -->
+      <input type="submit" value="Login"/>
       <input type="button" onclick="location.href='signup.html';" value="Sign Up"/>
     </form>
   </div>
