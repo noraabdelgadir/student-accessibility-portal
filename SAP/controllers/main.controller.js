@@ -2,22 +2,20 @@ var Users = require('../models/User');
 var Graphs = require('../models/Graph');
 
 function loadMain (req, res, next){
-    /*Graphs.find({}, function(err, categories) {
-        if (err) throw err;
-        if (categories.length > 0){
-            res.render('PersonalGraph/main', {categories: categories, name: req.session.name});
-        } else{
-            res.render('PersonalGraph/main', {categories: '', name: req.session.name})
-        }
-    });*/
-    res.sendFile('/SAP/views/PersonalGraph/main.html', {'root': '../'})
+  res.sendFile('/SAP/views/PersonalGraph/main.html', {'root': '../'})
 }
 
-function listServices(req, res){
-    Graphs.find({}, function(err, services) {
-        if (err) throw err;
-        res.send(JSON.stringify(services));
-    });
+function loadFavourites (req, res, next){
+  Users.find({utorid: req.session.currentUser})
+       .select({favourites: 1})
+       .exec(function(err, favourites) {
+          if (err) throw err;
+          res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3030/main');
+          res.setHeader('Access-Control-Allow-Methods', 'GET');
+          //res.send(JSON.stringify(favourites));
+          res.json(favourites);
+       });
+  //res.sendFile('/SAP/views/PersonalGraph/main.html', {'root': '../'})
 }
 
-module.exports = {listServices, loadMain};
+module.exports = {loadMain, loadFavourites};

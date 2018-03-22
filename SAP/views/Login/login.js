@@ -1,7 +1,7 @@
 function checkLogin(form){
 
   var rawFile = new XMLHttpRequest();
-  rawFile.open("GET", 'http://127.0.0.1:3030/all', false);
+  rawFile.open("GET", 'http://localhost:3030/user', false);
   rawFile.onreadystatechange = function ()
   {
       if(rawFile.readyState === 4) {
@@ -21,16 +21,29 @@ function checkLogin(form){
   rawFile.send(null);
   var flag = false;
 
-  // checking password goes here now
+  for(var user in obj){
+    console.log("here");
+    console.log(obj[user]['utorid']);
+    console.log(obj[user]['password']);
 
-  if(obj.hasOwnProperty(form.username.value)){
-    if (obj[form.username.value]["password"] == form.password.value){
-      flag = true;
-      window.open('../PersonalGraph/main.html',"_self")
+    if (obj[user]['utorid'] == form.username.value){
+      if(form.password.value == obj[user]['password']){
+        flag = true;
+
+        // ajax
+        var userStr = "http://localhost:3030/curuser/" + form.username.value;
+        $.ajax({
+          type: "GET",
+          url: userStr,
+          success:function(data){
+            console.log("yay");
+          }
+        });
+
+        window.open('../PersonalGraph/main.html',"_self")
+      }
     }
   }
-
-
 
   // for (var i = 0, len = obj.length; i < len; ++i) {
   //   var user = obj[i].userName;

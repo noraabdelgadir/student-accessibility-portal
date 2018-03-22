@@ -81,6 +81,35 @@ $(document).ready(function() {
        };
       sys.graft(data);
     }
+    else if (cat == 'notes') {
+      var data = {
+         nodes : {
+           middleNode: {'mass':'1', 'color': '#002A5C', 'shape': 'dot', 'label': 'Note Taking'},
+           notesDownload: {'color': '#008BB0', 'shape': 'square', 'label': 'Download Notes'},
+           notesInfo:{'color': '#008BB0', 'shape': 'square', 'label': 'Information'},
+           notesRequest:{'color': '#008BB0', 'shape': 'square', 'label': 'Request for notes'},
+         },
+         edges:{
+           middleNode: {notesDownload:{}, notesInfo:{}, notesRequest:{}}
+         }
+       };
+      sys.graft(data);
+    }
+
+    else if (cat == 'tests') {
+      var data = {
+         nodes : {
+           middleNode: {'mass':'1', 'color': '#002A5C', 'shape': 'dot', 'label': 'Accomodations'},
+           testRequest: {'color': '#008BB0', 'shape': 'square', 'label': 'Request'},
+           lateRequest:{'color': '#008BB0', 'shape': 'square', 'label': 'Late Request'},
+           testInfo:{'color': '#008BB0', 'shape': 'square', 'label': 'Information'},
+         },
+         edges:{
+           middleNode: {testInfo:{}, lateRequest:{}, testRequest:{}}
+         }
+       };
+      sys.graft(data);
+    }
   }
   var category = GetURLParameter('category');
   //addServices(category);

@@ -11,7 +11,15 @@ function listUsers (req, res){
 /** Find user by utorid **/
 function findbyUtor(req, res){
     console.log(req.params.utorid);
-    User.find({email: req.params.utorid},function(err, users) {
+    User.find({utorid: req.params.utorid},function(err, users) {
+        if (err) throw err;
+          res.send(users);
+    });
+}
+
+function hello(req, res){
+    console.log(req.params.utorid);
+    User.find({utorid: req.params.utorid, password: req.params.password},function(err, users) {
         if (err) throw err;
           res.send(users);
     });
