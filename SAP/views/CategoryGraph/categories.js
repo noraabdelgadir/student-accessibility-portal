@@ -23,10 +23,10 @@ $(document).ready(function() {
   // Test and Exam Accommodation
   $("#accommodationRenewal").load("../../txtFiles/accommodationRenewal.txt");
 
-  // $("#").load("../../txtFiles/.txt");
+  $("#").load("../../txtFiles/.txt");
 
   // adopted from http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
-  /*function GetURLParameter(sParam){
+  function GetURLParameter(sParam){
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
     for (var i = 0; i < sURLVariables.length; i++){
@@ -37,18 +37,32 @@ $(document).ready(function() {
     }
   }
 
+  var data = {
+     nodes : {
+       middleNode: {'mass':'1', 'color': '#002A5C', 'shape': 'dot', 'label': 'Documents'},
+       child1: {'color': '#008BB0', 'shape': 'square', 'label': 'Verification of Illness'},
+       child2:{'color': '#008BB0', 'shape': 'square', 'label': 'Letter of Accommodation'},
+       child3:{'color': '#008BB0', 'shape': 'square', 'label': 'Saved'},
+     },
+     edges:{
+       middleNode: {child1:{length:0.4}, child2:{length:0.4},
+              child3:{length:0.4}}
+     }
+   };
+  sys.graft(data);
+
   function addServices(cat){
     if (cat == 'documents') {
       var data = {
          nodes : {
            middleNode: {'mass':'1', 'color': '#002A5C', 'shape': 'dot', 'label': 'Documents'},
-           verificationOfIllness: {'color': '#008BB0', 'shape': 'square', 'label': 'Verification of Illness'},
-           letterOfAccommodation:{'color': '#008BB0', 'shape': 'square', 'label': 'Letter of Accomodation'},
-           saved:{'color': '#008BB0', 'shape': 'square', 'label': 'Saved'},
+           child1: {'color': '#008BB0', 'shape': 'square', 'label': 'Verification of Illness'},
+           child2:{'color': '#008BB0', 'shape': 'square', 'label': 'Letter of Accomodation'},
+           child3:{'color': '#008BB0', 'shape': 'square', 'label': 'Saved'},
          },
          edges:{
-           middleNode: {verificationOfIllness:{length:0.4}, letterOfAccommodation:{length:0.4},
-                  saved:{length:0.4}}
+           middleNode: {child1:{length:0.4}, child2:{length:0.4},
+                  child3:{length:0.4}}
          }
        };
       sys.graft(data);
@@ -69,7 +83,7 @@ $(document).ready(function() {
     }
   }
   var category = GetURLParameter('category');
-  addServices(category);*/
+  //addServices(category);
 
 
 });

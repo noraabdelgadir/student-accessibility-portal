@@ -163,9 +163,23 @@
             selected = (nearest.distance < 50) ? nearest : null
 
             var middleNode = particleSystem.getNode("middleNode");
+
             if (nearest && selected && nearest.node===selected.node &&
               selected.node != middleNode) {
-              var service = document.getElementById(selected.node.name);
+              console.log(selected.node.data);
+              console.log(selected.node.data.label);
+              var selected = selected.node.data.label.split(" ");
+              var length = selected.length;
+              var elementId = "";
+              for(var i = 0; i < length - 1; i++) {
+                elementId = elementId + selected[i] + "-";
+              }
+              elementId = elementId + selected[length - 1];
+
+              console.log(elementId);
+
+              //var service = document.getElementById(selected.node.name);
+              var service = document.getElementById(elementId);
               var container = document.getElementById('container').children;
               $.each(container, function(i, item) {
                 if(item.id != 'graph') item.style.display = "none";

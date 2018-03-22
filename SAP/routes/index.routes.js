@@ -8,5 +8,6 @@ const mainRoutes = require('./main.route');
 //Mount all routes to /api
 router.use('/user', userRoutes);
 router.use('/main', mainRoutes);
+router.use('/category', categoryRoutes);
 
 module.exports = router;

@@ -7,7 +7,6 @@ function loadCategory (req, res, next){
 
 /** Find specific category **/
 function findCategory(req, res){
-    console.log(req.params.name);
     Graph.find({name: req.params.name},function(err, services) {
         if (err) throw err;
           res.send(services);
