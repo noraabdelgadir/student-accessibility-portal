@@ -1,7 +1,50 @@
-$(document).ready(function(){
+$(document).ready(function() {
   var sys = arbor.ParticleSystem(10000, 400, 1);
   sys.parameters({repulsion: 10000, gravity: false, dt: 0.35});
   sys.renderer = Renderer("#viewport");
+
+  // loading the descriptions of the services
+
+  // Documents
+  $("#Letter-of-Accommodation").load("../../txtFiles/letterOfAccommodation.txt");
+  $("#Verification-of-Illness").load("../../txtFiles/verificationOfIllness.txt");
+  $("#Accommodation-Renewal").load("../../txtFiles/accommodationRenewal.txt");
+
+  // Notes
+  $("#Volunteer").load("../../txtFiles/volunteer.txt");
+  $("#Upload-Notes").load("../../txtFiles/uploadNotes.txt");
+  $("#Request-Note-Taking").load("../../txtFiles/requestNotetaking.txt");
+
+  // Counsellors
+  $("#Adaptive-Technologist").load("../../txtFiles/adaptiveTechnologist.txt");
+  $("#Learning-Strategist").load("../../txtFiles/learningStrategist.txt");
+  $("#Accessibility-Advisors").load("../../txtFiles/accessibilityAdvisor.txt");
+
+  // Test and Exam Accommodation
+
+
+  // $("#").load("../../txtFiles/.txt");
+  var category = new Object();
+
+
+  $.ajax({
+    url: 'http://localhost:3030/category/:name',
+    contentType: "application/json",
+    complete: function(data) {
+      var jsonData = JSON.parse(data.responseText)
+
+      // remember to change !!!
+      category.nodes  = jsonData[0].category.nodes[0];
+      category.edges = jsonData[0].category.edges[0];
+
+      //functions to build graph (arborjs)
+      var sys = arbor.ParticleSystem(10000, 400, 1);
+      sys.parameters({repulsion: 10000, gravity: true, dt: 0.35});
+      sys.renderer = Renderer("#viewport") ;
+      sys.graft(category);
+    }
+  });
+
 
   // adopted from http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
   function GetURLParameter(sParam){
@@ -15,18 +58,32 @@ $(document).ready(function(){
     }
   }
 
+  // var data = {
+  //    nodes : {
+  //      middleNode: {'mass':'1', 'color': '#002A5C', 'shape': 'dot', 'label': 'Documents'},
+  //      child1: {'color': '#008BB0', 'shape': 'square', 'label': 'Verification of Illness'},
+  //      child2:{'color': '#008BB0', 'shape': 'square', 'label': 'Letter of Accommodation'},
+  //      child3:{'color': '#008BB0', 'shape': 'square', 'label': 'Accommodation Renewal'},
+  //    },
+  //    edges:{
+  //      middleNode: {child1:{length:0.4}, child2:{length:0.4},
+  //             child3:{length:0.4}}
+  //    }
+  //  };
+  // sys.graft(data);
+
   function addServices(cat){
     if (cat == 'documents') {
       var data = {
          nodes : {
            middleNode: {'mass':'1', 'color': '#002A5C', 'shape': 'dot', 'label': 'Documents'},
-           verificationOfIlliness: {'color': '#008BB0', 'shape': 'square', 'label': 'verification of illiness'},
-           letterOfAccomodation:{'color': '#008BB0', 'shape': 'square', 'label': 'letter of accomodation'},
-           saved:{'color': '#008BB0', 'shape': 'square', 'label': 'Saved'},
+           child1: {'color': '#008BB0', 'shape': 'square', 'label': 'Verification of Illness'},
+           child2:{'color': '#008BB0', 'shape': 'square', 'label': 'Letter of Accomodation'},
+           child3:{'color': '#008BB0', 'shape': 'square', 'label': 'Saved'},
          },
          edges:{
-           middleNode: {verificationOfIlliness:{length:0.4}, letterOfAccomodation:{length:0.4},
-                  saved:{length:0.4}}
+           middleNode: {child1:{length:0.4}, child2:{length:0.4},
+                  child3:{length:0.4}}
          }
        };
       sys.graft(data);
@@ -76,7 +133,7 @@ $(document).ready(function(){
     }
   }
   var category = GetURLParameter('category');
-  addServices(category);
+  //addServices(category);
 
 
 });

@@ -1,3 +1,4 @@
+<h1>Verification of Illness</h1>
 If you need a “doctor’s note” to verify that you have been ill or injured, you need the Verification of Student Illness or Injury Form. This is the new official University of Toronto form for all students who are requesting special academic consideration based on illness or injury.  This new form replaces the "Student Medical Certificate".
 <br>
 Please provide the form below to your Physician, Surgeon, Nurse Practitioner, Registered Psychologist, or Dentist for completion.
@@ -18,4 +19,4 @@ Submit this form to your professor to gain accommodations.
 <br>
 You can download the Verification of Student Illness or Injury Form by clicking download below
 <br>
-<button>Download</button>
+<button onclick="location.href='http://www.illnessverification.utoronto.ca/index.php';">Download</button>

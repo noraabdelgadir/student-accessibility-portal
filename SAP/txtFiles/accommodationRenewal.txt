@@ -1,3 +1,4 @@
+<h1>Accommodation Renewal Form</h1>
 In order to have your accommodations put in place in time for the next academic session, you need to reactivate your registration with Accessibility Services.
 <br>
 Some students with current documentation regarding their disability and where no changes in accommodations needs are anticipated by the student and/or disability advisor will be able to renew their accommodations electronically through an individualized email.
@@ -22,4 +23,4 @@ If you still have questions about whether or not you need updated documentation,
 <br>
 You can download the Accommodation Renewal Form by clicking download below
 <br>
-<button>Download</button>
+<button onclick="location.href='http://www.studentlife.utoronto.ca/as/annual-renewal';">Download</button>

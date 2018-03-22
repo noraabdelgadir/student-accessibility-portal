@@ -6,11 +6,13 @@ const userRoutes = require('./user.route');
 const mainRoutes = require('./main.route');
 const servicesRoutes = require('./services.route');
 const loginRoutes = require('./login.route');
+const categoryRoutes = require('./category.route');
 
 //Mount all routes to /api
 router.use('/user', userRoutes);
 router.use('/main', mainRoutes);
 router.use('/services', servicesRoutes);
 router.use('/', loginRoutes);
+router.use('/category/:name', categoryRoutes);
 
 module.exports = router;
