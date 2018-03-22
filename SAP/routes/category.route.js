@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/', categoryCtrl.loadCategory);
 
 router.get('/:name', function(req, res, next){
-  userCtrl.findCategory(req, res);
+  categoryCtrl.findCategory(req, res);
 });
 
 module.exports = router;

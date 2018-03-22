@@ -13,6 +13,6 @@ router.use('/user', userRoutes);
 router.use('/main', mainRoutes);
 router.use('/services', servicesRoutes);
 router.use('/', loginRoutes);
-router.use('/category', categoryRoutes);
+router.use('/category/:name', categoryRoutes);
 
 module.exports = router;
