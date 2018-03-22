@@ -3,9 +3,12 @@
   <link rel="stylesheet" type="text/css" href="index.css">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
     <title>Accessibility Mock Services</title>
 
     <script type="text/javascript" src="login.js"></script>
+    <script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../../assets/styles/navbar.css" type="text/css">
 
 <!--
@@ -50,11 +53,12 @@
 <div class="login-page">
   <div class="form">
 
-    <form class="login-form">
+    <form class="login-form" action="/login" method="post">
       <input type="text" name="username" placeholder="username"/>
       <input type="password" name="password" placeholder="password"/>
 
-      <input type="button" onclick="checkLogin(this.form)" value="Login"/>
+      <!-- <input type="button" onclick="checkLogin(this.form)" value="Login"/> -->
+      <input type="submit" value="Login"/>
       <input type="button" onclick="location.href='signup.html';" value="Sign Up"/>
     </form>
   </div>
