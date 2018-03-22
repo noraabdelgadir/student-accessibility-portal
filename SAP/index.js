@@ -39,39 +39,41 @@ var server = app.listen(3030, function() {
 });
 
 // meta data
-var datas = {"guest": {"password" : "guest", "firstname" : "guest", "lastname": "guest"}}
-// app.get('/all', sendAll);
-//
-// app.get('/add/:user/:pw/:first/:last', addUser);
-//
-// function sendAll(request, response) {
-//   response.send(datas);
-// }
+// var datas = {"guest": {"password" : "guest", "firstname" : "guest", "lastname": "guest"}}
+var current = "none";
+app.get('/curuser', sendCur);
+
+app.get('/curuser/:user', addUser);
+
+function sendCur(request, response) {
+  response.send(current);
+}
 
 function addUser(request, response){
-  var username = request.params.user;
-  var password = request.params.pw;
-  var first = request.params.first;
-  var last = request.params.last;
-
-  var newInput = {"password": password, "firstname": first, "lastname": last}
-
-  datas[username] = newInput
+  current = request.params.user;
+  // var username = request.params.user;
+  // var password = request.params.pw;
+  // var first = request.params.first;
+  // var last = request.params.last;
+  //
+  // var newInput = {"password": password, "firstname": first, "lastname": last}
+  //
+  // datas[username] = newInput
 
 }
 
 //login stuff
-
-var currentUser = 'none';
-
-app.get('/curUser', currentUser);
-
-app.get('/curUser/:user', newUser);
-
-function currentUser(request, response) {
-  response.send(currentUser);
-}
-
-function currentUser(request, response) {
-  currentUSer = request.params.user;
-}
+//
+// var currentUser = 'none';
+//
+// app.get('/add', currentUser);
+//
+// app.get('/curuser/:user', newUser);
+//
+// function currentUser(request, response) {
+//   response.send(currentUser);
+// }
+//
+// function newUser(request, response) {
+//   currentUSer = request.params.user;
+// }

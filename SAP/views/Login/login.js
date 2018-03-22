@@ -39,7 +39,7 @@ function checkLogin(form){
       if(form.password.value == obj[user]['password']){
         flag = true;
 
-        var userStr = "/curUser/" + form.username.value;
+        var userStr = "/curuser/" + form.username.value;
 
         var pop = window.open(userStr, "Popup", "height=1, width=1, status=no, toolbar=no, menubar=no, location=no, top = 100000, left=100000 ");
         pop.close();
