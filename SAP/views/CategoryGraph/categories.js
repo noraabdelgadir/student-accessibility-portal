@@ -22,11 +22,11 @@ $(document).ready(function() {
 
   // Test and Exam Accommodation
   $("#accommodationRenewal").load("../../txtFiles/accommodationRenewal.txt");
-  
+
   // $("#").load("../../txtFiles/.txt");
 
   // adopted from http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
-  function GetURLParameter(sParam){
+  /*function GetURLParameter(sParam){
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
     for (var i = 0; i < sURLVariables.length; i++){
@@ -69,7 +69,7 @@ $(document).ready(function() {
     }
   }
   var category = GetURLParameter('category');
-  addServices(category);
+  addServices(category);*/
 
 
 });

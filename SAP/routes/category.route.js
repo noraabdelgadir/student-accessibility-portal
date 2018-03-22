@@ -6,4 +6,8 @@ const router = express.Router();
 // Render category page
 router.get('/', categoryCtrl.loadCategory);
 
+router.get('/:name', function(req, res, next){
+  userCtrl.findCategory(req, res);
+});
+
 module.exports = router;
