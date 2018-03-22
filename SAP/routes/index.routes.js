@@ -5,10 +5,12 @@ const router = express.Router();
 const userRoutes = require('./user.route');
 const mainRoutes = require('./main.route');
 const servicesRoutes = require('./services.route');
+const loginRoutes = require('./login.route');
 
 //Mount all routes to /api
 router.use('/user', userRoutes);
 router.use('/main', mainRoutes);
 router.use('/services', servicesRoutes);
+router.use('/', loginRoutes);
 
 module.exports = router;
