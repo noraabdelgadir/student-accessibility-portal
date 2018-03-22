@@ -1,5 +1,17 @@
 $(document).ready(function(){
+<<<<<<< HEAD
+
+  $.ajax({
+    url: 'http://localhost:3030/main/favourites',
+    contentType: "application/json",
+    sucess: function(data) {
+      //console.log(data);
+      console.log(data.responseText);
+    }
+  });
+=======
   var curUser= "default";
+>>>>>>> csc301-winter-2018/master
 
   var sys = arbor.ParticleSystem(10000, 400, 1);
   sys.parameters({repulsion: 10000, gravity: true, dt: 0.35});

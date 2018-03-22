@@ -13,7 +13,6 @@ var server = require('http').Server(app);
 var routes = require('./routes/index.routes');
 
 //Set up default db connection and create error handlers
-
 var mongoDB = "mongodb://sapuser1:sapuser1@ds115569.mlab.com:15569/sap";
 mongoose.connect(mongoDB);
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -65,10 +64,16 @@ var server = app.listen(3030, function() {
 //
 // });
 
+
+//app.get('/curUser', currentUser);
+
+//app.get('/curUser/:user', newUser);
+
 //Login
 
 var currentUser = "none";
 app.get('/curUser', sendCur);
+
 
 function sendCur(request, response) {
   // rawFile.open("GET", 'http://localhost:3030/user', false);
