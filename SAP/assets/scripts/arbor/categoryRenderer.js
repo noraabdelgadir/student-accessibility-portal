@@ -166,8 +166,6 @@
 
             if (nearest && selected && nearest.node===selected.node &&
               selected.node != middleNode) {
-              console.log(selected.node.data);
-              console.log(selected.node.data.label);
               var selected = selected.node.data.label.split(" ");
               var length = selected.length;
               var elementId = "";
@@ -176,7 +174,6 @@
               }
               elementId = elementId + selected[length - 1];
 
-              console.log(elementId);
 
               //var service = document.getElementById(selected.node.name);
               var service = document.getElementById(elementId);

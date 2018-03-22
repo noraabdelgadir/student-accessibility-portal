@@ -6,24 +6,24 @@ $(document).ready(function() {
   // loading the descriptions of the services
 
   // Documents
-  $("#letterOfAccommodation").load("../../txtFiles/letterOfAccommodation.txt");
-  $("#verificationOfIllness").load("../../txtFiles/verificationOfIllness.txt");
-  // $("#saved").load("../../txtFiles/.txt");
+  $("#Letter-of-Accommodation").load("../../txtFiles/letterOfAccommodation.txt");
+  $("#Verification-of-Illness").load("../../txtFiles/verificationOfIllness.txt");
+  $("#Accommodation-Renewal").load("../../txtFiles/accommodationRenewal.txt");
 
   // Notes
-  $("#volunteer").load("../../txtFiles/volunteer.txt");
-  $("#uploadNotes").load("../../txtFiles/uploadNotes.txt");
-  $("#requestNotetaking").load("../../txtFiles/requestNotetaking.txt");
+  $("#Volunteer").load("../../txtFiles/volunteer.txt");
+  $("#Upload-Notes").load("../../txtFiles/uploadNotes.txt");
+  $("#Request-Note-Taking").load("../../txtFiles/requestNotetaking.txt");
 
   // Counsellors
-  $("#adaptiveTechnologist").load("../../txtFiles/adaptiveTechnologist.txt");
-  $("#learningStrategist").load("../../txtFiles/learningStrategist.txt");
-  $("#accessibilityAdvisors").load("../../txtFiles/accessibilityAdvisor.txt");
+  $("#Adaptive-Technologist").load("../../txtFiles/adaptiveTechnologist.txt");
+  $("#Learning-Strategist").load("../../txtFiles/learningStrategist.txt");
+  $("#Accessibility-Advisors").load("../../txtFiles/accessibilityAdvisor.txt");
 
   // Test and Exam Accommodation
-  $("#accommodationRenewal").load("../../txtFiles/accommodationRenewal.txt");
+  
 
-  $("#").load("../../txtFiles/.txt");
+  // $("#").load("../../txtFiles/.txt");
 
   // adopted from http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
   function GetURLParameter(sParam){
@@ -42,7 +42,7 @@ $(document).ready(function() {
        middleNode: {'mass':'1', 'color': '#002A5C', 'shape': 'dot', 'label': 'Documents'},
        child1: {'color': '#008BB0', 'shape': 'square', 'label': 'Verification of Illness'},
        child2:{'color': '#008BB0', 'shape': 'square', 'label': 'Letter of Accommodation'},
-       child3:{'color': '#008BB0', 'shape': 'square', 'label': 'Saved'},
+       child3:{'color': '#008BB0', 'shape': 'square', 'label': 'Accommodation Renewal'},
      },
      edges:{
        middleNode: {child1:{length:0.4}, child2:{length:0.4},
