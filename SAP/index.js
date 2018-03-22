@@ -95,7 +95,7 @@ app.post('/login' ,function(req, res){
         console.log(password);
       if (users) {
         // res.redirect("/main");
-        res.redirect("/views/PersonalGraph/main.html");
+        res.redirect("/main");
       }
 
   })
