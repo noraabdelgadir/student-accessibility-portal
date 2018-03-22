@@ -8,15 +8,15 @@ $(document).ready(function(){
   // rawFile.open("GET", 'http://localhost:3030/curuser', false);
   // var curUser = rawFile.responseText;
 
-  $.ajax({
-    type: "GET",
-    async: false,
-    url: "http://localhost:3030/curUser",
-    data: "",
-    success:function(data){
-      curUser = data;
-    }
-  });
+  // $.ajax({
+  //   type: "GET",
+  //   async: false,
+  //   url: "http://localhost:3030/curUser",
+  //   data: "",
+  //   success:function(data){
+  //     curUser = data;
+  //   }
+  // });
 
   console.log(curUser);
 
