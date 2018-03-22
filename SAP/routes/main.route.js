@@ -6,8 +6,7 @@ const router = express.Router();
 // Render main page
 router.get('/', mainCtrl.loadMain);
 
-router.get('/', function(req, res, next){
-    mainCtrl.listServices(req, res);
-});
+// Get the graph data
+router.get('/favourites', mainCtrl.loadFavourites);
 
 module.exports = router;
