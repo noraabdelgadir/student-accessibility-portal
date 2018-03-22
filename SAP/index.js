@@ -6,6 +6,7 @@ var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
 var session = require('express-session');
+var bodyParser = require('body-parser')
 var app = express();
 
 var server = require('http').Server(app);
@@ -74,26 +75,28 @@ function sendCur(request, response) {
   response.send(currentUser);
 }
 
+app.use(express.json());
+app.use(express.urlencoded());
 
-
-app.get('/login' ,function(req, res){
-  var username = 'nicolalli'
-  var password = '1234'
+app.post('/login' ,function(req, res){
+  var username = req.body.username
+  var password = req.body.password
   // var ha = req.body.username
   // console.log(username);
 
-  User.find({utorid: username, password: password},function(err, users) {
-      if (err) throw err;
+  User.findOne({utorid: username, password: password},function(err, users) {
+      if (err){
+        console.log("oh no");
+      }
       req.session.currentUser = username;
       currentUser = username;
       // console.log("HELLO");
-        console.log(req.session.curUser);
-      res.redirect("/views/PersonalGraph/main.html");
+        console.log(username);
+        console.log(password);
+      if (users) {
+        // res.redirect("/main");
+        res.redirect("/views/PersonalGraph/main.html");
+      }
 
   })
-
-  // res.redirect('/main');
-
-
-
 });
