@@ -99,6 +99,32 @@ input[type=button]:hover {
   color: #fff;
 }
 
+input[type=submit] {
+  border: 3px solid #fff;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 10px 50px;
+  display: inline-block;
+  margin: 0 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+  color: #fff;
+}
+
+input[type=submit]:hover {
+  border: 3px solid #fff;
+  background-color: #abb2be;;
+  color: #fff;
+}
+
 .form input[type=text] {
  font-family: "Roboto", sans-serif;
  outline: 0;

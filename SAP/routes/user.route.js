@@ -22,27 +22,27 @@ router.delete('/:user_id', function(req, res, next){
   userCtrl.deleteUser(req, res);
 });
 
-
-router.post('/login' ,function(req, res){
-  var username = req.body.username
-  var password = req.body.password
-  // req.body.username, req.body.password
-  console.log(username);
-
-  User.find({utorid: username, password: password},function(err, users) {
-      if (err) throw err;
-      req.session.curUser = username;
-      console.log("HELLO");
-        console.log(req.session.curUser);
-      // res.redirect("/main");
-
-  })
-
-  // res.redirect('/main');
-
-
-
-});
+// 
+// router.post('/login' ,function(req, res){
+//   var username = 'nicolalli'
+//   var password = '1234'
+//   // req.body.username, req.body.password
+//   console.log(username);
+//
+//   User.find({utorid: username, password: password},function(err, users) {
+//       if (err) throw err;
+//       req.session.curUser = username;
+//       console.log("HELLO");
+//         console.log(req.session.curUser);
+//       res.redirect("views/Login/index.html");
+//
+//   })
+//
+//   // res.redirect('/main');
+//
+//
+//
+// });
 
 
 

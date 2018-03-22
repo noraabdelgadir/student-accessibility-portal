@@ -1,6 +1,7 @@
 'use strict';
 
 //setup all the variables needed
+var User = require('./models/User');
 var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
@@ -43,21 +44,6 @@ var server = app.listen(3030, function() {
 
 // meta data
 // var datas = {"guest": {"password" : "guest", "firstname" : "guest", "lastname": "guest"}}
-var current = "none";
-app.get('/curuser', sendCur);
-
-app.get('/curuser/:user', addUser);
-
-function sendCur(request, response) {
-  // rawFile.open("GET", 'http://localhost:3030/user', false);
-  response.send(current);
-}
-
-function addUser(request, response){
-  current = request.params.user;
-}
-
-
 // sign up
 //
 // app.post('/login' ,function(req, res){
@@ -77,3 +63,37 @@ function addUser(request, response){
 //
 //
 // });
+
+//Login
+
+var currentUser = "none";
+app.get('/curUser', sendCur);
+
+function sendCur(request, response) {
+  // rawFile.open("GET", 'http://localhost:3030/user', false);
+  response.send(currentUser);
+}
+
+
+
+app.get('/login' ,function(req, res){
+  var username = 'nicolalli'
+  var password = '1234'
+  // var ha = req.body.username
+  // console.log(username);
+
+  User.find({utorid: username, password: password},function(err, users) {
+      if (err) throw err;
+      req.session.currentUser = username;
+      currentUser = username;
+      // console.log("HELLO");
+        console.log(req.session.curUser);
+      res.redirect("/views/PersonalGraph/main.html");
+
+  })
+
+  // res.redirect('/main');
+
+
+
+});
