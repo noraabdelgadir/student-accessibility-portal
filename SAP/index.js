@@ -46,34 +46,13 @@ app.get('/curuser', sendCur);
 app.get('/curuser/:user', addUser);
 
 function sendCur(request, response) {
+  // rawFile.open("GET", 'http://localhost:3030/user', false);
   response.send(current);
 }
 
 function addUser(request, response){
   current = request.params.user;
-  // var username = request.params.user;
-  // var password = request.params.pw;
-  // var first = request.params.first;
-  // var last = request.params.last;
-  //
-  // var newInput = {"password": password, "firstname": first, "lastname": last}
-  //
-  // datas[username] = newInput
-
 }
 
-//login stuff
-//
-// var currentUser = 'none';
-//
-// app.get('/add', currentUser);
-//
-// app.get('/curuser/:user', newUser);
-//
-// function currentUser(request, response) {
-//   response.send(currentUser);
-// }
-//
-// function newUser(request, response) {
-//   currentUSer = request.params.user;
-// }
+
+// sign up
