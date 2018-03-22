@@ -64,16 +64,16 @@ var server = app.listen(3030, function() {
 //
 // });
 
-<<<<<<< HEAD
+
 //app.get('/curUser', currentUser);
 
 //app.get('/curUser/:user', newUser);
-=======
+
 //Login
 
 var currentUser = "none";
 app.get('/curUser', sendCur);
->>>>>>> csc301-winter-2018/master
+
 
 function sendCur(request, response) {
   // rawFile.open("GET", 'http://localhost:3030/user', false);
