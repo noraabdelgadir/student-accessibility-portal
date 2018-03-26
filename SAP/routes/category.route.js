@@ -6,8 +6,9 @@ const router = express.Router();
 // Render category page
 router.get('/', categoryCtrl.loadCategory);
 
-router.get('/:name', function(req, res, next){
-  categoryCtrl.findCategory(req, res);
+//this allows you to fetch data
+router.get('/load/:name', function(req, res, next){
+  categoryCtrl.findCategory(req, res, next);
 });
 
 module.exports = router;
