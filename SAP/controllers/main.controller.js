@@ -12,10 +12,8 @@ function loadFavourites (req, res, next){
           if (err) throw err;
           res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3030/main');
           res.setHeader('Access-Control-Allow-Methods', 'GET');
-          //res.send(JSON.stringify(favourites));
           res.json(favourites);
        });
-  //res.sendFile('/SAP/views/PersonalGraph/main.html', {'root': '../'})
 }
 
 module.exports = {loadMain, loadFavourites};
