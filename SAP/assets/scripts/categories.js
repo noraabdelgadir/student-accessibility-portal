@@ -19,17 +19,23 @@ $(document).ready(function() {
   // Test and Exam Accommodation
 
   //get the name of the category
-  var categoryName = GetURLParameter('name');
+  var categoryName = GetURLParameter('category');
+  console.log(categoryName)
 
   $.ajax({
     url: 'http://localhost:3030/category/load/' + categoryName,
+    method: 'GET',
     contentType: "application/json",
-    complete: function(data) {
-      var jsonData = JSON.parse(data.responseText);
+    success: function(data) {
+      // var jsonData = JSON.parse(data.responseText);
 
+      // var category = new Object();
+      // category.nodes  = jsonData[0].nodes;
+      // category.edges = jsonData[0].edges;
       var category = new Object();
-      category.nodes  = jsonData[0].nodes;
-      category.edges = jsonData[0].edges;
+      category.nodes  = data.nodes;
+      category.edges = data.edges;
+      console.log(data);
 
       //functions to build graph (arborjs)
       var sys = arbor.ParticleSystem(10000, 400, 1);
@@ -130,3 +136,4 @@ $(document).ready(function() {
 
 
 });
+
