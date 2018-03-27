@@ -15,3 +15,5 @@ Keep in mind you can only upload 10 mb at time.
 <br>
 To upload notes online, please click the button below.
 <button onclick="location.href='https://sites.studentlife.utoronto.ca/accessibility/vollogin.aspx';">Upload</button>
+<button onclick=favourite(`notes`)>Favourite</button>
+<button onclick=unfavourite(`notes`)>Unfavourite</button>

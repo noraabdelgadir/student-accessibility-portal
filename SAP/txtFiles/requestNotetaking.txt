@@ -8,3 +8,6 @@ If you have a learning disability that requires note-taking support, you need to
 <br>
 Notice that this is a volunteer based accommodation, thus there is no guarantee your every class will be able to provide the notes. If you have any questions, or concerns, contact the note taking service at as.notetaking@utoronto.ca
 <button onclick="location.href='https://sites.studentlife.utoronto.ca/accessibility/login.aspx';">Register</button>
+
+<button onclick=favourite(`notes`)>Favourite</button>
+<button onclick=unfavourite(`notes`)>Unfavourite</button>

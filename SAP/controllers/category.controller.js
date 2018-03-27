@@ -1,4 +1,5 @@
 var Graph = require('../models/Graph');
+var User = require('../models/User');
 
 function loadCategory (req, res, next){
     res.sendFile('/SAP/views/CategoryGraph/categories.html', {'root': '../'})
@@ -34,5 +35,148 @@ function findCategory(req, res, next){
     });
 }
 
-module.exports = {loadCategory, findCategory};
+function addFavourite(req, res, next){
+  // var cat = req.params.category
+  console.log("here")
+  console.log(req.body.newcat)
+  var flag = true
+  var username = req.session.currentUser.utorid
+  var oldFav = req.session.currentUser.favourites
 
+  var favObject = oldFav.nodes[0]
+  var nodesLen =  Object.keys(favObject).length
+
+  console.log(nodesLen)
+  console.log(username)
+
+  var catName = ""
+  if (req.body.newcat == "documents"){
+    catName = "Documents"
+  }
+  if (req.body.newcat == "test"){
+    catName = "Test and Exam Accommodation"
+  }
+  if (req.body.newcat == "counsellors"){
+    catName = "Counsellors"
+  }
+  if (req.body.newcat == "notes"){
+    catName = "Note Taking"
+  }
+  if (req.body.newcat == "build"){
+    catName = "Building Accessibility"
+  }
+
+  for (var key in favObject){
+    if (favObject[key].label == catName){
+      res.status(404).send("already exists")
+      return;
+    }
+  }
+
+  var newFav = oldFav
+  var favName = "cat" + nodesLen
+  var favNode = {"color": "#008BB0", "shape": "dot", "label": catName, "link": ""}
+  newFav.nodes[0][favName] = favNode
+  newFav.edges[0]["center"][favName] = {"length": "0.4"}
+
+  console.log("oldfav: ")
+  console.log(oldFav)
+  console.log("newfav: ")
+  console.log(newFav)
+
+  User.updateOne( {utorid:username}, { $set: { favourites: newFav } }, function(err) {
+
+    if (!err){
+      console.log("fav works")
+      res.status(200).send("yay")
+    }
+    else {
+      res.status(400).send("ERRROOr")
+    }
+
+  });
+
+}
+
+function deleteFavourite(req, res, next){
+  // var cat = req.params.category
+  console.log("here")
+  console.log(req.body.newcat)
+  var flag = true
+  var username = req.session.currentUser.utorid
+  var oldFav = req.session.currentUser.favourites;
+  var oldNodes = oldFav.nodes[0]
+  var oldEdges = req.session.currentUser.favourites.edges[0].center
+  var nodesLen =  Object.keys(oldNodes).length
+
+  console.log(nodesLen)
+  console.log(username)
+  console.log(oldEdges)
+  console.log(oldNodes)
+
+  var catName = ""
+  if (req.body.newcat == "documents"){
+    catName = "Documents"
+  }
+  if (req.body.newcat == "test"){
+    catName = "Test and Exam Accommodation"
+  }
+  if (req.body.newcat == "counsellors"){
+    catName = "Counsellors"
+  }
+  if (req.body.newcat == "notes"){
+    catName = "Note Taking"
+  }
+  if (req.body.newcat == "build"){
+    catName = "Building Accessibility"
+  }
+
+  var edgeToRemove = ""
+
+  console.log("list")
+
+  for (var key in oldNodes) {
+    // console.log("key")
+    // console.log(key)
+    // console.log(favObject[key])
+    if (oldNodes[key].label == catName){
+      edgeToRemove = key
+      delete oldNodes[key]
+    }
+  }
+
+  if (edgeToRemove == ""){
+    res.status(404).send("Data doesn't exist")
+    return;
+  }
+
+  for (var key in oldEdges) {
+    // console.log("key")
+    // console.log(key)
+    // console.log(favObject[key])
+    if (key == edgeToRemove){
+      delete oldEdges[key]
+    }
+  }
+
+  console.log("after")
+  console.log(oldNodes)
+  console.log(oldEdges)
+
+  var newFav = {edges: [ { "center": oldEdges} ], nodes: [oldNodes]}
+
+  User.updateOne( {utorid:username}, { $set: { favourites: newFav } }, function(err) {
+
+    if (!err){
+      console.log("unfav works")
+      res.status(200).send("yay")
+    }
+    else {
+      res.status(400).send("ERRROOr")
+    }
+
+  });
+
+}
+
+module.exports = {loadCategory, findCategory, addFavourite, deleteFavourite};

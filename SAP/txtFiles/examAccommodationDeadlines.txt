@@ -6,3 +6,6 @@ Please notice the registration deadlines for Winter 2018 semester are:
 <li>For quizzes and tests before April 6, a 14 day’s notice is required.</li>
 <li>For exams during April 2018 final exam period, register before Friday, March 9</li>
 </ul>
+
+<button onclick=favourite(`test`)>Favourite</button>
+<button onclick=unfavourite(`test`)>Unfavourite</button>

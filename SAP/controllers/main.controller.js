@@ -6,7 +6,7 @@ function loadMain (req, res, next){
 }
 
 function loadFavourites (req, res, next){
-  Users.find({utorid: req.session.currentUser})
+  Users.find({utorid: req.session.currentUser.utorid})
        .select({favourites: 1})
        .exec(function(err, favourites) {
           if (err) throw err;

@@ -17,3 +17,6 @@ Request test or exam accommodation throught the buttom below if your request is 
 <li>Transitional Year Program</li>
 </ul>
 <button onclick="location.href='https://osm.utoronto.ca:4446/tes_student_registration/f?p=134:1:0';">Request</button>
+
+<button onclick=favourite(`test`)>Favourite</button>
+<button onclick=unfavourite(`test`)>Unfavourite</button>
