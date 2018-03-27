@@ -5,7 +5,7 @@ function loadCategory (req, res, next){
 }
 
 /** Find specific category **/
-ffunction findCategory(req, res, next){
+function findCategory(req, res, next){
   var realName = ''
   if (req.params.name == "documents"){
     realName = 'Documents';
