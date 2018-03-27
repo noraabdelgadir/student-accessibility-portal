@@ -1,0 +1,19 @@
+<h1>Late or Other Accommodation</h1>
+Request test or exam accommodation throught the buttom below if your request is past deadline or belong to one of the following:
+<ul>
+<li>Deferred term test</li>
+<li>Deferred final exam</li>
+<li>Graduate level courses (final exam only)</li>
+<li>Faculty of Dentistry</li>
+<li>Faculty of Law</li>
+<li>Faculty of Nursing</li>
+<li>Faculty of Medicine (final exam only)</li>
+<li>Faculty of Social Work</li>
+<li>Michener Institute</li>
+<li>Department of Occupational Therapy</li>
+<li>Department of Physical Therapy</li>
+<li>Department of Speech and Language</li>
+<li>Academic Bridging Program</li>
+<li>Transitional Year Program</li>
+</ul>
+<button onclick="location.href='https://osm.utoronto.ca:4446/tes_student_registration/f?p=134:1:0';">Request</button>
