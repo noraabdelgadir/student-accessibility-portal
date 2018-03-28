@@ -17,6 +17,9 @@ $(document).ready(function() {
   $("#Accessibility-Advisors").load("../../txtFiles/accessibilityAdvisor.txt");
 
   // Test and Exam Accommodation
+  $("#Late-Request").load("../../txtFiles/lateAccommodation.txt");
+  $("#Request").load("../../txtFiles/requestNotetaking.txt");
+  $("#Information").load("../../txtFiles/examAccommodationDeadlines.txt");
 
   //get the name of the category
   var categoryName = GetURLParameter('category');
@@ -27,11 +30,6 @@ $(document).ready(function() {
     method: 'GET',
     contentType: "application/json",
     success: function(data) {
-      // var jsonData = JSON.parse(data.responseText);
-
-      // var category = new Object();
-      // category.nodes  = jsonData[0].nodes;
-      // category.edges = jsonData[0].edges;
       var category = new Object();
       category.nodes  = data.nodes;
       category.edges = data.edges;
@@ -136,4 +134,3 @@ $(document).ready(function() {
 
 
 });
-
