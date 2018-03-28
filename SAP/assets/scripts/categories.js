@@ -16,6 +16,29 @@ $(document).ready(function() {
   $("#Learning-Strategist").load("../../txtFiles/learningStrategist.txt");
   $("#Accessibility-Advisors").load("../../txtFiles/accessibilityAdvisor.txt");
 
+<<<<<<< HEAD:SAP/views/CategoryGraph/categories.js
+  var category = new Object();
+
+
+  $.ajax({
+    url: 'http://localhost:3030/category/:name',
+    contentType: "application/json",
+    complete: function(data) {
+      var jsonData = JSON.parse(data.responseText)
+
+      allServices.nodes  = jsonData[0].favourites.nodes[0];
+      allServices.edges = jsonData[0].favourites.edges[0];
+
+      //functions to build graph (arborjs)
+      var sys = arbor.ParticleSystem(10000, 400, 1);
+      sys.parameters({repulsion: 10000, gravity: true, dt: 0.35});
+      sys.renderer = Renderer("#viewport") ;
+      sys.graft(allServices);
+    }
+  });
+
+
+=======
   // Test and Exam Accommodation
   $("#Late-Request").load("../../txtFiles/lateAccommodation.txt");
   $("#Request").load("../../txtFiles/requestNotetaking.txt");
@@ -42,6 +65,7 @@ $(document).ready(function() {
       sys.graft(category);
     }
   })
+>>>>>>> b742bd4c6550444aa8537cdd208421c650dc64e2:SAP/assets/scripts/categories.js
 
   // adopted from http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
   function GetURLParameter(sParam){
