@@ -81,7 +81,9 @@ function sendCur(request, response) {
 }
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 app.post('/login' ,function(req, res){
   var username = req.body.username
@@ -93,7 +95,7 @@ app.post('/login' ,function(req, res){
       if (err){
         console.log("oh no");
       }
-      req.session.currentUser = username;
+      req.session.currentUser = users;
       currentUser = username;
       // console.log("HELLO");
         console.log(username);

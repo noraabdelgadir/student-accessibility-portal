@@ -1,8 +1,4 @@
 $(document).ready(function() {
-  var sys = arbor.ParticleSystem(10000, 400, 1);
-  sys.parameters({repulsion: 10000, gravity: false, dt: 0.35});
-  sys.renderer = Renderer("#viewport");
-
   // loading the descriptions of the services
 
   // Documents
@@ -20,6 +16,7 @@ $(document).ready(function() {
   $("#Learning-Strategist").load("../../txtFiles/learningStrategist.txt");
   $("#Accessibility-Advisors").load("../../txtFiles/accessibilityAdvisor.txt");
 
+<<<<<<< HEAD:SAP/views/CategoryGraph/categories.js
   var category = new Object();
 
 
@@ -41,6 +38,36 @@ $(document).ready(function() {
   });
 
 
+=======
+  // Test and Exam Accommodation
+
+  //get the name of the category
+  var categoryName = GetURLParameter('category');
+  console.log(categoryName)
+
+  $.ajax({
+    url: 'http://localhost:3030/category/load/' + categoryName,
+    method: 'GET',
+    contentType: "application/json",
+    success: function(data) {
+      // var jsonData = JSON.parse(data.responseText);
+
+      // var category = new Object();
+      // category.nodes  = jsonData[0].nodes;
+      // category.edges = jsonData[0].edges;
+      var category = new Object();
+      category.nodes  = data.nodes;
+      category.edges = data.edges;
+      console.log(data);
+
+      //functions to build graph (arborjs)
+      var sys = arbor.ParticleSystem(10000, 400, 1);
+      sys.parameters({repulsion: 10000, gravity: true, dt: 0.35});
+      sys.renderer = Renderer("#viewport");
+      sys.graft(category);
+    }
+  })
+>>>>>>> b742bd4c6550444aa8537cdd208421c650dc64e2:SAP/assets/scripts/categories.js
 
   // adopted from http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
   function GetURLParameter(sParam){
@@ -54,19 +81,19 @@ $(document).ready(function() {
     }
   }
 
-  var data = {
-     nodes : {
-       middleNode: {'mass':'1', 'color': '#002A5C', 'shape': 'dot', 'label': 'Documents'},
-       child1: {'color': '#008BB0', 'shape': 'square', 'label': 'Verification of Illness'},
-       child2:{'color': '#008BB0', 'shape': 'square', 'label': 'Letter of Accommodation'},
-       child3:{'color': '#008BB0', 'shape': 'square', 'label': 'Accommodation Renewal'},
-     },
-     edges:{
-       middleNode: {child1:{length:0.4}, child2:{length:0.4},
-              child3:{length:0.4}}
-     }
-   };
-  sys.graft(data);
+  // var data = {
+  //    nodes : {
+  //      middleNode: {'mass':'1', 'color': '#002A5C', 'shape': 'dot', 'label': 'Documents'},
+  //      child1: {'color': '#008BB0', 'shape': 'square', 'label': 'Verification of Illness'},
+  //      child2:{'color': '#008BB0', 'shape': 'square', 'label': 'Letter of Accommodation'},
+  //      child3:{'color': '#008BB0', 'shape': 'square', 'label': 'Accommodation Renewal'},
+  //    },
+  //    edges:{
+  //      middleNode: {child1:{length:0.4}, child2:{length:0.4},
+  //             child3:{length:0.4}}
+  //    }
+  //  };
+  // sys.graft(data);
 
   function addServices(cat){
     if (cat == 'documents') {
@@ -133,3 +160,4 @@ $(document).ready(function() {
 
 
 });
+
