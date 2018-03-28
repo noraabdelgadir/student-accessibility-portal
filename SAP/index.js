@@ -18,7 +18,7 @@ mongoose.connect(mongoDB);
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //Database models
-var Users = require('./models/User');
+var User = require('./models/User');
 var Graphs = require('./models/Graph');
 
 //serve as static files for now
@@ -42,34 +42,7 @@ var server = app.listen(3030, function() {
   console.log('Running on 127.0.0.1:%s', server.address().port);
 });
 
-// meta data
-// var datas = {"guest": {"password" : "guest", "firstname" : "guest", "lastname": "guest"}}
-// sign up
-//
-// app.post('/login' ,function(req, res){
-//   var username = req.params.username;
-//   var password = req.params.password;
-//   console.log(username);
-//
-//   User.find({utorid: username, password: password},function(err, users) {
-//       if (err) throw err;
-//       req.session.user = users;
-//       console.log("HELLO");
-//
-//   })
-//   console.log("aw");
-//   // res.redirect('/main');
-//
-//
-//
-// });
-
-
-//app.get('/curUser', currentUser);
-
-//app.get('/curUser/:user', newUser);
-
-//Login
+// login and register underneath
 
 var currentUser = "none";
 app.get('/curUser', sendCur);
@@ -88,12 +61,13 @@ app.use(bodyParser.urlencoded({
 app.post('/login' ,function(req, res){
   var username = req.body.username
   var password = req.body.password
+
   // var ha = req.body.username
   // console.log(username);
 
   User.findOne({utorid: username, password: password},function(err, users) {
       if (err){
-        console.log("oh no");
+        res.status(400).send("oh no")
       }
       req.session.currentUser = users;
       currentUser = username;
@@ -102,8 +76,68 @@ app.post('/login' ,function(req, res){
         console.log(password);
       if (users) {
         // res.redirect("/main");
-        res.redirect("/main");
+        res.status(200).send("yay")
+
+      }
+      else {
+        res.status(404).send("user not found")
       }
 
   })
+});
+
+app.post('/register' ,function(req, res){
+  var username = req.body.utorid
+  var firstname = req.body.firstname
+  var lastname  = req.body.lastname
+  var password = req.body.password
+  // var ha = req.body.username
+  // console.log(username);
+
+  var id = new mongoose.mongo.ObjectId();
+
+
+  var newUser = new User({
+  _id: id,
+  utorid: username,
+  first_name: firstname,
+  last_name: lastname,
+  email: 'sample@mail.utoronto.ca',
+  password: password,
+  favourites: {
+      nodes: [
+            {
+                "center": {
+                    "label": firstname + " " + lastname,
+                    "shape": "dot",
+                    "color": "#00215C",
+                    "mass": "1"
+                }
+            }
+        ],
+      edges: [
+        ]
+  },
+  admin: false
+  });
+
+  console.log(newUser);
+  console.log("check ");
+  User.create(newUser,function(err, users) {
+      if (err){
+        res.status(400).send("error")
+      }
+
+      if (users) {
+        // res.redirect("/main");
+        console.log(users)
+        res.status(200).send("yay")
+      }
+
+      else {
+        res.status(400).send("error")
+      }
+
+  })
+
 });
