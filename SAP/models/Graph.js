@@ -18,28 +18,32 @@ var GraphSchema = new Schema(
               color: String,
               shape: String,
               label: String,
-              link: String
+              link: String,
+              parent: String
             },
             child1: {
               mass: String,
               color: String,
               shape: String,
               label: String,
-              link: String
+              link: String,
+              parent: String
             },
             child2: {
               mass: String,
               color: String,
               shape: String,
               label: String,
-              link: String
+              link: String,
+              parent: String
             },
             child3: {
               mass: String,
               color: String,
               shape: String,
               label: String,
-              link: String
+              link: String,
+              parent: String
             }
         },
         edges: {
