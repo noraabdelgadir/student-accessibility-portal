@@ -164,14 +164,13 @@
 
             var middleNode = particleSystem.getNode("middleNode");
             var middle = middleNode.data.label.split(" ");
-            
+
             var length = middle.length;
             var catId = "";
             for(var i = 0; i < length - 1; i++) {
-              catId = catId + middle[0][i] + "-";
+              catId = catId + middle[i] + "-";
             }
             catId = catId + middle[length - 1];
-            
 
             if (nearest && selected && nearest.node===selected.node &&
               selected.node != middleNode) {
