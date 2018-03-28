@@ -1,8 +1,4 @@
 $(document).ready(function() {
-  var sys = arbor.ParticleSystem(10000, 400, 1);
-  sys.parameters({repulsion: 10000, gravity: false, dt: 0.35});
-  sys.renderer = Renderer("#viewport");
-
   // loading the descriptions of the services
 
   // Documents
@@ -22,29 +18,32 @@ $(document).ready(function() {
 
   // Test and Exam Accommodation
 
-
-  // $("#").load("../../txtFiles/.txt");
-  var category = new Object();
-
+  //get the name of the category
+  var categoryName = GetURLParameter('category');
+  console.log(categoryName)
 
   $.ajax({
-    url: 'http://localhost:3030/category/:name',
+    url: 'http://localhost:3030/category/load/' + categoryName,
+    method: 'GET',
     contentType: "application/json",
-    complete: function(data) {
-      var jsonData = JSON.parse(data.responseText)
+    success: function(data) {
+      // var jsonData = JSON.parse(data.responseText);
 
-      // remember to change !!!
-      category.nodes  = jsonData[0].category.nodes[0];
-      category.edges = jsonData[0].category.edges[0];
+      // var category = new Object();
+      // category.nodes  = jsonData[0].nodes;
+      // category.edges = jsonData[0].edges;
+      var category = new Object();
+      category.nodes  = data.nodes;
+      category.edges = data.edges;
+      console.log(data);
 
       //functions to build graph (arborjs)
       var sys = arbor.ParticleSystem(10000, 400, 1);
       sys.parameters({repulsion: 10000, gravity: true, dt: 0.35});
-      sys.renderer = Renderer("#viewport") ;
+      sys.renderer = Renderer("#viewport");
       sys.graft(category);
     }
-  });
-
+  })
 
   // adopted from http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
   function GetURLParameter(sParam){
@@ -137,3 +136,4 @@ $(document).ready(function() {
 
 
 });
+

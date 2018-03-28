@@ -4,7 +4,7 @@ const mainCtrl = require('../controllers/login.controller');
 const router = express.Router();
 
 // Render main page
-router.get('/index.html', mainCtrl.loadIndex);
+router.get('/', mainCtrl.loadIndex);
 
 router.get('/index.css', mainCtrl.loadCSS);
 

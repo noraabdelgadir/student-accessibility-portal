@@ -1,7 +1,6 @@
 $(document).ready(function(){
   var allServices = new Object();
 
-
   $.ajax({
     url: 'http://localhost:3030/main/favourites',
     contentType: "application/json",

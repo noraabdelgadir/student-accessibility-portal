@@ -20,3 +20,5 @@ Submit this form to your professor to gain accommodations.
 You can download the Verification of Student Illness or Injury Form by clicking download below
 <br>
 <button onclick="location.href='http://www.illnessverification.utoronto.ca/index.php';">Download</button>
+<button onclick=favourite(`documents`)>Favourite</button>
+<button onclick=unfavourite(`documents`)>Unfavourite</button>

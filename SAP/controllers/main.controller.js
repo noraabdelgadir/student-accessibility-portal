@@ -6,16 +6,14 @@ function loadMain (req, res, next){
 }
 
 function loadFavourites (req, res, next){
-  Users.find({utorid: req.session.currentUser})
+  Users.find({utorid: req.session.currentUser.utorid})
        .select({favourites: 1})
        .exec(function(err, favourites) {
           if (err) throw err;
           res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3030/main');
           res.setHeader('Access-Control-Allow-Methods', 'GET');
-          //res.send(JSON.stringify(favourites));
           res.json(favourites);
        });
-  //res.sendFile('/SAP/views/PersonalGraph/main.html', {'root': '../'})
 }
 
 module.exports = {loadMain, loadFavourites};
