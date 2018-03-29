@@ -39,7 +39,8 @@ function addFavourite(req, res, next){
   // var cat = req.params.category
   console.log("here")
   console.log(req.body.newcat)
-  var flag = true
+  console.log(req.body.subcat)
+  var flag = false
   var username = req.session.currentUser.utorid
   var oldFav = req.session.currentUser.favourites
 
@@ -50,37 +51,73 @@ function addFavourite(req, res, next){
   console.log(username)
 
   var catName = ""
+  var link = ""
   if (req.body.newcat == "documents"){
     catName = "Documents"
+    link = "http://localhost:3030/category?category=documents"
   }
   if (req.body.newcat == "test"){
     catName = "Test and Exam Accommodation"
+    link = "http://localhost:3030/category?category=test"
   }
   if (req.body.newcat == "counsellors"){
     catName = "Counsellors"
+    link = "http://localhost:3030/category?category=counsellors"
   }
   if (req.body.newcat == "notes"){
     catName = "Note Taking"
+    link = "http://localhost:3030/category?category=notes"
   }
   if (req.body.newcat == "build"){
     catName = "Building Accessibility"
+    link = "http://localhost:3030/category?category=build"
   }
 
   for (var key in favObject){
     if (favObject[key].label == catName){
-      res.status(404).send("already exists")
+      // res.status(404).send("already exists")
+      // return;
+      flag = true;
+    }
+    if (key == req.body.subcat){
+      res.status(404).send("sub-category already exists")
       return;
     }
   }
 
-  var newFav = oldFav
-  var favName = "cat" + nodesLen
-  var favNode = {"color": "#008BB0", "shape": "dot", "label": catName, "link": ""}
-  newFav.nodes[0][favName] = favNode
-  newFav.edges[0]["center"][favName] = {"length": "0.4"}
+  // only add the category if doesn't exist
+  if (flag == false){
+    var newFav = oldFav
+    var favName = req.body.newcat
+    var favNode = {"color": "#008BB0", "shape": "dot", "label": catName, "link": link}
+    // var favNode = {}
 
-  console.log("oldfav: ")
-  console.log(oldFav)
+    newFav.nodes[0][favName] = favNode
+    newFav.edges[0]["center"][favName] = {"length": "0.4"}
+    newFav.edges[0][favName] = {}
+  }
+
+  // add syb category here
+  var subCatNode = {}
+
+  Graph.findOne({name: catName},function(err, result) {
+        if (err) throw err;
+        var subb = req.body.subcat
+
+        subCatNode = result.nodes.subb
+  });
+
+  subCatNode.shape = "rectangle"
+  subCatNode.parent = req.body.newcat
+
+  newFav.nodes[0][req.body.subcat] = subCatNode
+  newFav.edges[0][favName][req.body.subcat] = {"length": "0.4"}
+
+
+
+
+  // console.log("oldfav: ")
+  // console.log(oldFav)
   console.log("newfav: ")
   console.log(newFav)
 
