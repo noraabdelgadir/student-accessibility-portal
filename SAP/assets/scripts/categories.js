@@ -14,11 +14,11 @@ $(document).ready(function() {
   // Counsellors
   $("#Adaptive-Technologist").load("../../txtFiles/adaptiveTechnologist.txt");
   $("#Learning-Strategist").load("../../txtFiles/learningStrategist.txt");
-  $("#Accessibility-Advisors").load("../../txtFiles/accessibilityAdvisor.txt");
+  $("#Accessibility-Advisor").load("../../txtFiles/accessibilityAdvisor.txt");
 
   // Test and Exam Accommodation
   $("#Late-Request").load("../../txtFiles/lateAccommodation.txt");
-  $("#Request").load("../../txtFiles/requestNotetaking.txt");
+  $("#Request").load("../../txtFiles/onTimeAccommodation.txt");
   $("#Information").load("../../txtFiles/examAccommodationDeadlines.txt");
 
 

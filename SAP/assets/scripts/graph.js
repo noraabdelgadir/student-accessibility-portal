@@ -22,26 +22,27 @@ $(document).ready(function() {
     contentType: "application/json",
     complete: function(data) {
     var filtered = JSON.parse(JSON.stringify(allServices));
-
-    $( "input[type=checkbox]" ).on( "click", function () {
-        var n = $( "input:checked");
-        filtered = JSON.parse(JSON.stringify(allServices));
-        var checked = []
-        $.each(n, function (index, value) {
-          checked.push(value.value);
-        });
-        var nodes = allServices.nodes;
-        for (var key in nodes) {
-          if(!checked.includes(nodes[key].label) && key != "center") {
-            delete (filtered.nodes)[key];
-            delete (filtered.edges)["center"][key];
+    setTimeout(function () {
+      $( "input[type=checkbox]" ).on( "click", function () {
+          var n = $( "input:checked");
+          filtered = JSON.parse(JSON.stringify(allServices));
+          var checked = []
+          $.each(n, function (index, value) {
+            checked.push(value.value);
+          });
+          var nodes = allServices.nodes;
+          for (var key in nodes) {
+            if(!checked.includes(nodes[key].label) && key != "center") {
+              delete (filtered.nodes)[key];
+              delete (filtered.edges)["center"][key];
+            }
           }
-        }
-        var sys = arbor.ParticleSystem(10000, 400, 1);
-        sys.parameters({repulsion: 10000, gravity: false, dt: 0.35});
-        sys.renderer = Renderer("#viewport");
-        sys.graft(filtered);
-    });
+          var sys = arbor.ParticleSystem(10000, 400, 1);
+          sys.parameters({repulsion: 10000, gravity: false, dt: 0.35});
+          sys.renderer = Renderer("#viewport");
+          sys.graft(filtered);
+      });
+    }, 2000);
   }
-  });
+});
 });
