@@ -33,7 +33,7 @@ $(document).ready(function() {
       var category = new Object();
       category.nodes  = data.nodes;
       category.edges = data.edges;
-      
+
       //functions to build graph (arborjs)
       var sys = arbor.ParticleSystem(10000, 400, 1);
       sys.parameters({repulsion: 10000, gravity: true, dt: 0.35});

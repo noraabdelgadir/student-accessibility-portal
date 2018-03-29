@@ -23,7 +23,6 @@ body {
   padding: 0 2rem;
 }
 
-
 button {
   border: 3px solid #fff;
   color: #fff;
@@ -49,4 +48,3 @@ button:hover {
   background-color: #008BB0;
   color: #fff;
 }
-
