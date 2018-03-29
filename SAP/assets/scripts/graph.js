@@ -16,15 +16,18 @@ $(document).ready(function() {
           center:{ cat1:{length:0.5}, cat2:{length:0.5}, cat3:{length:0.5}, cat4:{length:0.5}, cat5:{length:0.5} }
         }
       };
-    sys.graft(allServices);
+  var center = {
+    nodes:{center:{mass:'3',color:'#00215C',shape:'dot',label:'All Accessibility Services'}}
+  }
+
+  sys.graft(center);
   $.ajax({
     url: 'http://localhost:3030/services',
     contentType: "application/json",
     complete: function(data) {
-    var filtered = JSON.parse(JSON.stringify(allServices));
-    setTimeout(function () {
+      var filtered = JSON.parse(JSON.stringify(allServices));
       $( "input[type=checkbox]" ).on( "click", function () {
-          var n = $( "input:checked");
+          var n = $("input:checked");
           filtered = JSON.parse(JSON.stringify(allServices));
           var checked = []
           $.each(n, function (index, value) {
@@ -42,7 +45,6 @@ $(document).ready(function() {
           sys.renderer = Renderer("#viewport");
           sys.graft(filtered);
       });
-    }, 2000);
-  }
-});
+    }
+  });
 });
