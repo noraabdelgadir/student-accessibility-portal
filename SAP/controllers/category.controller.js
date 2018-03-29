@@ -100,8 +100,8 @@ function addFavourite(req, res, next){
 
 function deleteFavourite(req, res, next){
   // var cat = req.params.category
-  console.log("here")
-  console.log(req.body.newcat)
+  //console.log("here")
+  //console.log(req.body.newcat)
   var flag = true
   var username = req.session.currentUser.utorid
   var oldFav = req.session.currentUser.favourites;
@@ -109,10 +109,10 @@ function deleteFavourite(req, res, next){
   var oldEdges = req.session.currentUser.favourites.edges[0].center
   var nodesLen =  Object.keys(oldNodes).length
 
-  console.log(nodesLen)
+  /*console.log(nodesLen)
   console.log(username)
   console.log(oldEdges)
-  console.log(oldNodes)
+  console.log(oldNodes)*/
 
   var catName = ""
   if (req.body.newcat == "documents"){
@@ -133,7 +133,7 @@ function deleteFavourite(req, res, next){
 
   var edgeToRemove = ""
 
-  console.log("list")
+  //console.log("list")
 
   for (var key in oldNodes) {
     // console.log("key")
@@ -159,9 +159,9 @@ function deleteFavourite(req, res, next){
     }
   }
 
-  console.log("after")
+  /*console.log("after")
   console.log(oldNodes)
-  console.log(oldEdges)
+  console.log(oldEdges)*/
 
   var newFav = {edges: [ { "center": oldEdges} ], nodes: [oldNodes]}
 
