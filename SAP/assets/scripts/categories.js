@@ -18,8 +18,13 @@ $(document).ready(function() {
 
   // Test and Exam Accommodation
   $("#Late-Request").load("../../txtFiles/lateAccommodation.txt");
-  $("#Request").load("../../txtFiles/onTimeAccommodation.txt");
+  $("#Request").load("../../txtFiles/requestNotetaking.txt");
   $("#Information").load("../../txtFiles/examAccommodationDeadlines.txt");
+
+  //Building accessibility
+  $("#Gender-Neutral-Washrooms").load("../../txtFiles/genderNeutralWashrooms.txt");
+  $("#Wheelchair-Entrance-Map").load("../../txtFiles/wheelEntranceMap.txt");
+  $("#Elevator-Map").load("../../txtFiles/elevatorMap.txt");
 
 
   //get the name of the category
