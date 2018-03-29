@@ -27,11 +27,11 @@
             var x = middleNode.p.x;
             var y = middleNode.p.y;
 
-            if (node.data.parent != undefined){
+            /*if (node.data.parent != undefined){
               var parent = particleSystem.getNode(node.data.parent);
               x = parent.p.x;
               y = (1/y) + parent.p.y;
-            }
+            }*/
 
             var angle = (count / (4/2)) * Math.PI;
 
@@ -164,14 +164,14 @@
 
             var middleNode = particleSystem.getNode("middleNode");
             var middle = middleNode.data.label.split(" ");
-            
+
             var length = middle.length;
             var catId = "";
             for(var i = 0; i < length - 1; i++) {
               catId = catId + middle[0][i] + "-";
             }
             catId = catId + middle[length - 1];
-            
+
 
             if (nearest && selected && nearest.node===selected.node &&
               selected.node != middleNode) {
