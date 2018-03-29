@@ -20,7 +20,17 @@ body {
 }
 
 .service {
-  padding: 0 2rem;
+  float: center;
+  padding-left: 20px;
+  width: 50%;
+  display: none;
+  max-height = 200px;
+  overflow: scroll;
+}
+
+#Accommodation-Renewal {
+  font-size : 13px;
+  overflow: scroll;
 }
 
 button {
