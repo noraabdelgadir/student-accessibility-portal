@@ -5,5 +5,5 @@ To volunteer, please register by clicking the register button below.
 <button onclick="location.href='https://www.studentlife.utoronto.ca/as/accommodation-letter';">More Info</button>
 <button onclick="location.href='https://www.studentlife.utoronto.ca/as/note-taking#node-7667';">Register</button>
 
-<button onclick=favourite(`notes`)>Favourite</button>
-<button onclick=unfavourite(`notes`)>Unfavourite</button>
+<button onclick=favourite(`notes`, `volunteer`)>Favourite</button>
+<button onclick=unfavourite(`notes`, `volunteer`)>Unfavourite</button>

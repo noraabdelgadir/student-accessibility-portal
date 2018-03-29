@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema(
     {
         _id: {
-            type: Number
+            type: Schema.Types.ObjectId
         },
         utorid: {
             type: String, required: true
