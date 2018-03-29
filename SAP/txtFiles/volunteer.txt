@@ -2,6 +2,7 @@
 If you’d like to help your fellow students, you can become a volunteer note-taker. Some benefits include getting something on your Co-Curricular Record (CCR), improving your own note-taking, and helping your fellow classmates. To learn more about the volunteer note-taking, click on the More Info button below.
 <br>
 To volunteer, please register by clicking the register button below.
+<br>
 <button onclick="location.href='https://www.studentlife.utoronto.ca/as/accommodation-letter';">More Info</button>
 <button onclick="location.href='https://www.studentlife.utoronto.ca/as/note-taking#node-7667';">Register</button>
 

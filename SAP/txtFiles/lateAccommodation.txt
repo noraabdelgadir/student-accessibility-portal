@@ -16,6 +16,7 @@ Request test or exam accommodation throught the buttom below if your request is 
 <li>Academic Bridging Program</li>
 <li>Transitional Year Program</li>
 </ul>
+<br>
 <button onclick="location.href='https://osm.utoronto.ca:4446/tes_student_registration/f?p=134:1:0';">Request</button>
 
 <button onclick=favourite(`test`, `late`)>Favourite</button>

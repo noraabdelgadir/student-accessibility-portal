@@ -15,6 +15,6 @@ rahul.bhat@utoronto.ca |  416-978-4132 | Drop-in: N/A
 Tanya Hyland, Learning Strategist
 <br>
 tanya.hyland@utoronto.ca | 416-978-6492
-
+<br>
 <button onclick=favourite(`counsellors`, `learn`)>Favourite</button>
 <button onclick=unfavourite(`counsellors`, `learn`)>Unfavourite</button>
