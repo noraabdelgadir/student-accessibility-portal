@@ -162,6 +162,7 @@ console.log(oldFav.nodes)
 
     if (!err){
       console.log("fav works")
+      req.session.currentUser.favourites = newFav
       res.status(200).send("yay")
     }
     else {
@@ -271,39 +272,31 @@ function deleteFavourite(req, res, next){
     return;
   }
 
-  console.log("check")
+
 
   for (var key in oldEdges) {
-    console.log(key)
-    console.log(oldEdges)
+
     if(key == req.body.newcat){
-      console.log("BOOOOOOB")
-        console.log(edgeToRemove)
+
       for (var key2 in oldEdges[key]){
-        console.log(key2)
 
 
-        // console.log(oldEdges)
         if (key2 == edgeToRemove){
           delete oldEdges[key][key2]
         }
-        console.log(oldEdges)
+
       }
     }
-    // if (key == edgeToRemove){
-    //   delete oldEdgesCat[key]
-    // }
+
   }
 
   // check if old Edges if empty
   for (var key in oldEdges){
-    console.log("ANOTHER BOOOOOOOOB")
-    console.log(key)
-    console.log(oldEdges[key])
-    console.log(Object.keys(oldEdges[key]).length)
+
     if (Object.keys(oldEdges[key]).length == 0){
       delete oldEdges[key]
       delete oldEdges["center"][key]
+      delete oldNodes[key]
     }
 
   }
@@ -319,6 +312,7 @@ function deleteFavourite(req, res, next){
 
     if (!err){
       console.log("unfav works")
+      req.session.currentUser.favourites = newFav
       res.status(200).send("yay")
     }
     else {
