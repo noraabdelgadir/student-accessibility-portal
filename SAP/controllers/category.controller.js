@@ -63,7 +63,7 @@ console.log(oldFav.nodes)
     if (req.body.subcat == "renewal"){
       subName = "Accommodation Renewal"
     }
-    if (req.body.subcat == "verify"){
+    if (req.body.subcat == "letter"){
       subName = "Letter of Accommodation"
     }
   }
@@ -180,40 +180,87 @@ function deleteFavourite(req, res, next){
   var username = req.session.currentUser.utorid
   var oldFav = req.session.currentUser.favourites;
   var oldNodes = oldFav.nodes[0]
-  var oldEdges = req.session.currentUser.favourites.edges[0].center
+  var oldEdges = req.session.currentUser.favourites.edges[0]
+  var catt = req.body.newcat
+  var oldEdgesCat = req.session.currentUser.favourites.edges[0].catt
+  console
   var nodesLen =  Object.keys(oldNodes).length
 
-  /*console.log(nodesLen)
-  console.log(username)
-  console.log(oldEdges)
-  console.log(oldNodes)*/
-
   var catName = ""
+  var subName = ""
   if (req.body.newcat == "documents"){
     catName = "Documents"
+    if (req.body.subcat == "verify"){
+      subName = "Verification of Illness"
+    }
+    if (req.body.subcat == "renewal"){
+      subName = "Accommodation Renewal"
+    }
+    if (req.body.subcat == "verify"){
+      subName = "Letter of Accommodation"
+    }
   }
   if (req.body.newcat == "test"){
     catName = "Test and Exam Accommodation"
+    if (req.body.subcat == "request"){
+      subName = "Request"
+    }
+    if (req.body.subcat == "late"){
+      subName = "Late Request"
+    }
+    if (req.body.subcat == "info"){
+      subName = "Information"
+    }
   }
   if (req.body.newcat == "counsellors"){
     catName = "Counsellors"
+    if (req.body.subcat == "adaptive"){
+      subName = "Adaptive Technologist"
+    }
+    if (req.body.subcat == "learning"){
+      subName =  "Learning Strategist"
+    }
+    if (req.body.subcat == "advisor"){
+      subName = "Accessibility Advisor"
+    }
   }
   if (req.body.newcat == "notes"){
     catName = "Note Taking"
+    if (req.body.subcat == "upload"){
+      subName = "Upload Notes"
+    }
+    if (req.body.subcat == "volunteer"){
+      subName =  "Volunteer"
+    }
+    if (req.body.subcat == "request"){
+      subName = "Request Note Taking"
+    }
   }
   if (req.body.newcat == "build"){
     catName = "Building Accessibility"
+    if (req.body.subcat == "washrooms"){
+      subName = "Gender Neutral Washrooms"
+    }
+    if (req.body.subcat == "wheelchair"){
+      subName =  "Wheelchair Entrance Map"
+    }
+    if (req.body.subcat == "elevator"){
+      subName = "Elevator Map"
+    }
   }
-
   var edgeToRemove = ""
 
   //console.log("list")
 
   for (var key in oldNodes) {
-    // console.log("key")
+
+    // if (oldNodes[key].label == catName){
+    //   edgeToRemove = key
+    //   delete oldNodes[key]
+    // }
+
     // console.log(key)
-    // console.log(favObject[key])
-    if (oldNodes[key].label == catName){
+    if (key == req.body.subcat){
       edgeToRemove = key
       delete oldNodes[key]
     }
@@ -224,20 +271,36 @@ function deleteFavourite(req, res, next){
     return;
   }
 
+  console.log("check")
+
   for (var key in oldEdges) {
-    // console.log("key")
-    // console.log(key)
-    // console.log(favObject[key])
-    if (key == edgeToRemove){
-      delete oldEdges[key]
+    console.log(key)
+    console.log(oldEdges)
+    if(key == req.body.newcat){
+      console.log("BOOOOOOB")
+        console.log(edgeToRemove)
+      for (var key2 in oldEdges[key]){
+        console.log(key2)
+
+
+        // console.log(oldEdges)
+        if (key2 == edgeToRemove){
+          delete oldEdges[key][key2]
+        }
+        console.log(oldEdges)
+      }
     }
+    // if (key == edgeToRemove){
+    //   delete oldEdgesCat[key]
+    // }
   }
 
   /*console.log("after")
   console.log(oldNodes)
   console.log(oldEdges)*/
+  var edgeToList = [oldEdges]
 
-  var newFav = {edges: [ { "center": oldEdges} ], nodes: [oldNodes]}
+  var newFav = {edges: edgeToList, nodes: [oldNodes]}
 
   User.updateOne( {utorid:username}, { $set: { favourites: newFav } }, function(err) {
 

@@ -21,4 +21,4 @@ You can download the Verification of Student Illness or Injury Form by clicking 
 <br>
 <button onclick="location.href='http://www.illnessverification.utoronto.ca/index.php';">Download</button>
 <button onclick=favourite(`documents`,`verify`)>Favourite</button>
-<button onclick=unfavourite(`documents`, `verify`)>Unfavourite</button>
+<button onclick=unfavourite(`documents`,`verify`)>Unfavourite</button>

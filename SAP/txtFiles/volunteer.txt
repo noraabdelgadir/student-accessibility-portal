@@ -7,4 +7,4 @@ To volunteer, please register by clicking the register button below.
 <button onclick="location.href='https://sites.studentlife.utoronto.ca/accessibility/pcourselist.aspx';">Register</button>
 
 <button onclick=favourite(`notes`,`volunteer`)>Favourite</button>
-<button onclick=unfavourite(`notes`, `volunteer`)>Unfavourite</button>
+<button onclick=unfavourite(`notes`,`volunteer`)>Unfavourite</button>

@@ -17,4 +17,4 @@ Tanya Hyland, Learning Strategist
 tanya.hyland@utoronto.ca | 416-978-6492
 <br>
 <button onclick=favourite(`counsellors`,`learn`)>Favourite</button>
-<button onclick=unfavourite(`counsellors`, `learn`)>Unfavourite</button>
+<button onclick=unfavourite(`counsellors`,`learn`)>Unfavourite</button>
