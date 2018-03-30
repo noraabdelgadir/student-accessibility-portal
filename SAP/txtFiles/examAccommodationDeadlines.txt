@@ -7,5 +7,5 @@ Please notice the registration deadlines for Winter 2018 semester are:
 <li>For exams during April 2018 final exam period, register before Friday, March 9</li>
 </ul>
 <br>
-<button onclick=favourite(`test`, `info`)>Favourite</button>
+<button onclick=favourite(`test`,`info`)>Favourite</button>
 <button onclick=unfavourite(`test`, `info`)>Unfavourite</button>

@@ -3,5 +3,5 @@ If you want to request accommodation for a Faculty of Art and Science quiz or te
 <br>
 <button onclick="location.href='https://clockwork.studentlife.utoronto.ca/user/test/book.aspx';">Request</button>
 
-<button onclick=favourite(`test`, `request`)>Favourite</button>
+<button onclick=favourite(`test`,`request`)>Favourite</button>
 <button onclick=unfavourite(`test`, `request`)>Unfavourite</button>

@@ -35,6 +35,7 @@ function findCategory(req, res, next){
     });
 }
 
+
 function addFavourite(req, res, next){
   // var cat = req.params.category
   console.log("here")
@@ -43,7 +44,7 @@ function addFavourite(req, res, next){
   var flag = false
   var username = req.session.currentUser.utorid
   var oldFav = req.session.currentUser.favourites
-
+console.log(oldFav.nodes)
   var favObject = oldFav.nodes[0]
   var nodesLen =  Object.keys(favObject).length
 
@@ -51,26 +52,72 @@ function addFavourite(req, res, next){
   console.log(username)
 
   var catName = ""
+  var subName = ""
   var link = ""
   if (req.body.newcat == "documents"){
     catName = "Documents"
     link = "http://localhost:3030/category?category=documents"
+    if (req.body.subcat == "verify"){
+      subName = "Verification of Illness"
+    }
+    if (req.body.subcat == "renewal"){
+      subName = "Accommodation Renewal"
+    }
+    if (req.body.subcat == "verify"){
+      subName = "Letter of Accommodation"
+    }
   }
   if (req.body.newcat == "test"){
     catName = "Test and Exam Accommodation"
     link = "http://localhost:3030/category?category=test"
+    if (req.body.subcat == "request"){
+      subName = "Request"
+    }
+    if (req.body.subcat == "late"){
+      subName = "Late Request"
+    }
+    if (req.body.subcat == "info"){
+      subName = "Information"
+    }
   }
   if (req.body.newcat == "counsellors"){
     catName = "Counsellors"
     link = "http://localhost:3030/category?category=counsellors"
+    if (req.body.subcat == "adaptive"){
+      subName = "Adaptive Technologist"
+    }
+    if (req.body.subcat == "learning"){
+      subName =  "Learning Strategist"
+    }
+    if (req.body.subcat == "advisor"){
+      subName = "Accessibility Advisor"
+    }
   }
   if (req.body.newcat == "notes"){
     catName = "Note Taking"
     link = "http://localhost:3030/category?category=notes"
+    if (req.body.subcat == "upload"){
+      subName = "Upload Notes"
+    }
+    if (req.body.subcat == "volunteer"){
+      subName =  "Volunteer"
+    }
+    if (req.body.subcat == "request"){
+      subName = "Request Note Taking"
+    }
   }
   if (req.body.newcat == "build"){
     catName = "Building Accessibility"
     link = "http://localhost:3030/category?category=build"
+    if (req.body.subcat == "washrooms"){
+      subName = "Gender Neutral Washrooms"
+    }
+    if (req.body.subcat == "wheelchair"){
+      subName =  "Wheelchair Entrance Map"
+    }
+    if (req.body.subcat == "elevator"){
+      subName = "Elevator Map"
+    }
   }
 
   for (var key in favObject){
@@ -98,28 +145,18 @@ function addFavourite(req, res, next){
   }
 
   // add syb category here
-  var subCatNode = {}
+  var subCatNode = {"mass": "1",
+            "color": "#008BB0",
+            "shape": "rectangle",
+            "label": subName,
+            "link": "",
+            "parent": req.body.newcat}
 
-  Graph.findOne({name: catName},function(err, result) {
-        if (err) throw err;
-        var subb = req.body.subcat
-
-        subCatNode = result.nodes.subb
-  });
-
-  subCatNode.shape = "rectangle"
-  subCatNode.parent = req.body.newcat
 
   newFav.nodes[0][req.body.subcat] = subCatNode
   newFav.edges[0][favName][req.body.subcat] = {"length": "0.4"}
 
 
-
-
-  // console.log("oldfav: ")
-  // console.log(oldFav)
-  console.log("newfav: ")
-  console.log(newFav)
 
   User.updateOne( {utorid:username}, { $set: { favourites: newFav } }, function(err) {
 
