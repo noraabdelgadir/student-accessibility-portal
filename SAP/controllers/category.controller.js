@@ -295,6 +295,19 @@ function deleteFavourite(req, res, next){
     // }
   }
 
+  // check if old Edges if empty
+  for (var key in oldEdges){
+    console.log("ANOTHER BOOOOOOOOB")
+    console.log(key)
+    console.log(oldEdges[key])
+    console.log(Object.keys(oldEdges[key]).length)
+    if (Object.keys(oldEdges[key]).length == 0){
+      delete oldEdges[key]
+      delete oldEdges["center"][key]
+    }
+
+  }
+
   /*console.log("after")
   console.log(oldNodes)
   console.log(oldEdges)*/
