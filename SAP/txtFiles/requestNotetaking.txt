@@ -10,5 +10,5 @@ Notice that this is a volunteer based accommodation, thus there is no guarantee 
 <br>
 <button onclick="location.href='https://sites.studentlife.utoronto.ca/accessibility/login.aspx';">Register</button>
 
-<button onclick=favourite(`notes`,`request`)>Favourite</button>
-<button onclick=unfavourite(`notes`,`request`)>Unfavourite</button>
+<button onclick=favourite(`notes`,`notesrequest`)>Favourite</button>
+<button onclick=unfavourite(`notes`,`notesrequest`)>Unfavourite</button>

@@ -28,6 +28,7 @@ function findCategory(req, res, next){
     Graph.findOne({name: realName},function(err, services) {
           if (err) throw err;
 
+
           // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3030/category');
           // res.setHeader('Access-Control-Allow-Methods', 'GET');
           // res.json(services);
@@ -54,17 +55,21 @@ function addFavourite(req, res, next){
   var catName = ""
   var subName = ""
   var link = ""
+  var subLink = ""
   if (req.body.newcat == "documents"){
     catName = "Documents"
     link = "http://localhost:3030/category?category=documents"
     if (req.body.subcat == "verify"){
       subName = "Verification of Illness"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=verify"
     }
     if (req.body.subcat == "renewal"){
       subName = "Accommodation Renewal"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=renewal"
     }
     if (req.body.subcat == "letter"){
       subName = "Letter of Accommodation"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=letter"
     }
   }
   if (req.body.newcat == "test"){
@@ -72,12 +77,15 @@ function addFavourite(req, res, next){
     link = "http://localhost:3030/category?category=test"
     if (req.body.subcat == "request"){
       subName = "Request"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=request"
     }
     if (req.body.subcat == "late"){
       subName = "Late Request"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=late"
     }
     if (req.body.subcat == "info"){
       subName = "Information"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=info"
     }
   }
   if (req.body.newcat == "counsellors"){
@@ -85,12 +93,15 @@ function addFavourite(req, res, next){
     link = "http://localhost:3030/category?category=counsellors"
     if (req.body.subcat == "adaptive"){
       subName = "Adaptive Technologist"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=adaptive"
     }
     if (req.body.subcat == "learning"){
       subName =  "Learning Strategist"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=learning"
     }
     if (req.body.subcat == "advisor"){
       subName = "Accessibility Advisor"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=advisor"
     }
   }
   if (req.body.newcat == "notes"){
@@ -98,12 +109,15 @@ function addFavourite(req, res, next){
     link = "http://localhost:3030/category?category=notes"
     if (req.body.subcat == "upload"){
       subName = "Upload Notes"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=upload"
     }
     if (req.body.subcat == "volunteer"){
       subName =  "Volunteer"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=volunteer"
     }
-    if (req.body.subcat == "request"){
+    if (req.body.subcat == "notesrequest"){
       subName = "Request Note Taking"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=notesrequest"
     }
   }
   if (req.body.newcat == "build"){
@@ -111,12 +125,15 @@ function addFavourite(req, res, next){
     link = "http://localhost:3030/category?category=build"
     if (req.body.subcat == "washrooms"){
       subName = "Gender Neutral Washrooms"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=washrooms"
     }
     if (req.body.subcat == "wheelchair"){
       subName =  "Wheelchair Entrance Map"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=wheelchair"
     }
     if (req.body.subcat == "elevator"){
       subName = "Elevator Map"
+      subLink = "http://localhost:3030/category?category=documents&subcategory=elevator"
     }
   }
 
@@ -132,8 +149,6 @@ function addFavourite(req, res, next){
     }
   }
 
-  // only add the category if doesn't exist
-  // if (flag == false){
 
     var newFav = oldFav
     var favName = req.body.newcat
@@ -148,13 +163,12 @@ function addFavourite(req, res, next){
   // }
 
   // add syb category here
-  var subCatNode = {"mass": "1",
+  var subCatNode = {
             "color": "#008BB0",
             "shape": "rectangle",
             "label": subName,
-            "link": "",
+            "link": subLink,
             "parent": req.body.newcat}
-
 
   newFav.nodes[0][req.body.subcat] = subCatNode
   newFav.edges[0][favName][req.body.subcat] = {"length": "0.4"}
@@ -236,7 +250,7 @@ function deleteFavourite(req, res, next){
     if (req.body.subcat == "volunteer"){
       subName =  "Volunteer"
     }
-    if (req.body.subcat == "request"){
+    if (req.body.subcat == "notesrequest"){
       subName = "Request Note Taking"
     }
   }
