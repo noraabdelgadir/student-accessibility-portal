@@ -48,6 +48,62 @@ $(document).ready(function() {
   })
 
 
+  var subCat = GetURLParameter('subcategory');
+  if (subCat == "letter"){
+    subCat = "Letter-of-Accommodation";
+  }
+  if (subCat == "verify"){
+    subCat = "Verification-of-Illness";
+  }
+  if (subCat == "renewal"){
+    subCat = "Accommodation-Renewal"
+  }
+
+  if (subCat == "volunteer"){
+    subCat = "Volunteer";
+  }
+  if (subCat == "upload"){
+    subCat = "Upload-Notes";
+  }
+  if (subCat == "notesrequest"){
+    subCat = "Request-Note-Taking";
+  }
+
+  if (subCat == "adaptive"){
+    subCat = "Adaptive-Technologist";
+  }
+  if (subCat == "learning"){
+    subCat = "Learning-Strategist";
+  }
+  if (subCat == "advisor"){
+    subCat = "Accessibility-Advisor";
+  }
+
+  if (subCat == "late"){
+    subCat = "Late-Request";
+  }
+  if (subCat == "request"){
+    subCat = "Request";
+  }
+  if (subCat == "info"){
+    subCat = "Information";
+  }
+
+  if (subCat == "washrooms"){
+    subCat = "Gender-Neutral-Washrooms";
+  }
+  if (subCat == "wheelchair"){
+    subCat = "Wheelchair";
+  }
+  if (subCat == "elevator"){
+    subCat = "Elevator-Map";
+  }
+
+  var service = document.getElementById(subCat);
+  // console.log(subCat);
+  service.style.display = "block";
+
+
   // adopted from http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
   function GetURLParameter(sParam){
     var sPageURL = window.location.search.substring(1);
@@ -61,3 +117,4 @@ $(document).ready(function() {
   }
 
 });
+
