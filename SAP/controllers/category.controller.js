@@ -44,8 +44,8 @@ function addFavourite(req, res, next){
   var flag = false
   var username = req.session.currentUser.utorid
   var oldFav = req.session.currentUser.favourites
-console.log(oldFav.nodes)
-  var favObject = oldFav.nodes[0]
+  console.log(oldFav)
+  var favObject = req.session.currentUser.favourites.nodes[0]
   var nodesLen =  Object.keys(favObject).length
 
   console.log(nodesLen)
@@ -133,7 +133,8 @@ console.log(oldFav.nodes)
   }
 
   // only add the category if doesn't exist
-  if (flag == false){
+  // if (flag == false){
+
     var newFav = oldFav
     var favName = req.body.newcat
     var favNode = {"color": "#008BB0", "shape": "dot", "label": catName, "link": link}
@@ -141,8 +142,10 @@ console.log(oldFav.nodes)
 
     newFav.nodes[0][favName] = favNode
     newFav.edges[0]["center"][favName] = {"length": "0.4"}
-    newFav.edges[0][favName] = {}
-  }
+    if (flag == false){
+      newFav.edges[0][favName] = {}
+    }
+  // }
 
   // add syb category here
   var subCatNode = {"mass": "1",
