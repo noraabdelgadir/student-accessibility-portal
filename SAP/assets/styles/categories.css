@@ -20,9 +20,15 @@ body {
 }
 
 .service {
-  padding: 0 2rem;
+  padding-left: 20px;
+  display: none;
+  overflow: auto;
 }
 
+/*#Accommodation-Renewal {
+  font-size : 13px;
+  overflow: scroll;
+}*/
 
 button {
   border: 3px solid #fff;
@@ -49,4 +55,3 @@ button:hover {
   background-color: #008BB0;
   color: #fff;
 }
-

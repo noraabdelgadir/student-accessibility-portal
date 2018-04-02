@@ -5,7 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Accessibility Mock Services</title>
 
-    <script type="text/javascript" src="signup.js"></script>
+      <script src="../../assets/scripts/signup.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="signup.css">
     <link rel="stylesheet" href="../../assets/styles/navbar.css" type="text/css">
 <!--
@@ -36,8 +37,12 @@
     <div class="signup-page" style="padding-top:100px;">
       <div class="form" >
 
-        <form class="signup-form" action="https://formspree.io/c.kantawan@gmail.com" method="POST">
+        <!-- <form class="signup-form" action="/register" method="POST"> -->
+        <form class="signup-form">
           <input type="text" name="utorid" placeholder="utorid"/>
+          <input type="password" name="password" placeholder="password"/>
+          <input type="text" name="firstname" placeholder="First Name"/>
+          <input type="text" name="lastname" placeholder="Last Name"/>
           <div id="upload" style= "margin-top:5px; margin-bottom:25px; width:100%;">
             <input type="file" name="filef" id="filef" class="inputfile" />
             <label for="filef">Upload Your Form Here</label>
@@ -47,9 +52,9 @@
           <input type="text" name="userName" placeholder="username"/>
           <input type="password" name="password" placeholder="password"/> -->
 
-          <!-- <input type="button" onclick="newSignUp(this.form)" value="Sign Up"/> -->
-          <input type="submit" name="submit" value="Submit">
-          <input type="button" onclick="location.href='index.html';" value="Login"/>
+          <input type="button" onclick="checkSignUp(this.form)" value="Sign Up"/>
+          <!-- <input type="submit" value="Signup"/> -->
+          <input type="button" onclick="location.href='/';" value="Login"/>
 
         </form>
       </div>

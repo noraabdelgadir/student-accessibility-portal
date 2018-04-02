@@ -1,0 +1,6 @@
+<h1> Elevator Map </h1>
+For a map showing buildings around the campus with elevators, please click the button below.
+<br>
+<button onclick="location.href='http://map.utoronto.ca/access/accessibility';">Map</button>
+<button onclick=favourite(`build`,`elevator`)>Favourite</button>
+<button onclick=unfavourite(`build`,`elevator`)>Unfavourite</button>

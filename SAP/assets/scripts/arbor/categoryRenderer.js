@@ -168,9 +168,21 @@
             var length = middle.length;
             var catId = "";
             for(var i = 0; i < length - 1; i++) {
-              catId = catId + middle[0][i] + "-";
+              catId = catId + middle[i] + "-";
             }
             catId = catId + middle[length - 1];
+
+            // adopted from http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
+            function GetURLParameter(sParam){
+              var sPageURL = window.location.search.substring(1);
+              var sURLVariables = sPageURL.split('&');
+              for (var i = 0; i < sURLVariables.length; i++){
+                  var sParameterName = sURLVariables[i].split('=');
+                  if (sParameterName[0] == sParam){
+                      return sParameterName[1];
+                  }
+              }
+            }
 
 
             if (nearest && selected && nearest.node===selected.node &&
@@ -183,15 +195,23 @@
               }
               elementId = elementId + selected[length - 1];
 
+              var oldservice = GetURLParameter("subcategory")
               var service = document.getElementById(elementId);
               var container = document.getElementById(catId).children;
+
               $.each(container, function(i, item) {
                 if(item.id != 'graph') item.style.display = "none";
               });
-              if (service.style.display === "none")
-                  service.style.display = "block";
-              else
-                  service.style.display = "none";
+              if (elementId != oldservice){
+                if (service.style.display === "none"){
+                    service.style.display = "block";
+                    oldservice.style.display = "none";
+                  }
+                else{
+                    service.style.display = "none";
+                    oldservice.style.display = "none";
+                  }
+              }
             }
 
             $(canvas).bind('mousemove', handler.dragged)

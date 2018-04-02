@@ -1,11 +1,13 @@
-function favourite(cat){
+function favourite(cat, sub){
+  console.log(cat)
+  console.log(sub)
 
   $.ajax({
         url: "http://localhost:3030/category/favourite",
         type: "POST",
-        data: {newcat : cat},
+        data: {newcat : cat, subcat: sub},
         success: (result) => {
-          console.log("yay fav")
+          alert("You have favourited this item")
         },
         error: (xhr) => {
           // don't do anything yet
@@ -21,14 +23,14 @@ function favourite(cat){
 }
 
 
-function unfavourite(cat){
+function unfavourite(cat, sub){
 
   $.ajax({
         url: "http://localhost:3030/category/unfavourite",
         type: "POST",
-        data: {newcat : cat},
+        data: {newcat : cat, subcat: sub},
         success: (result) => {
-          console.log("yay unfav")
+          alert("You have unfavourited this item")
         },
         error: (xhr) => {
           // don't do anything yet
