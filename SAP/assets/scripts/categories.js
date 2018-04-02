@@ -93,7 +93,7 @@ $(document).ready(function() {
     subCat = "Gender-Neutral-Washrooms";
   }
   if (subCat == "wheelchair"){
-    subCat = "Wheelchair";
+    subCat = "Wheelchair-Entrance-Map";
   }
   if (subCat == "elevator"){
     subCat = "Elevator-Map";
