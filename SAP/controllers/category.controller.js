@@ -341,6 +341,10 @@ function deleteFavourite(req, res, next){
   console.log(oldEdges)*/
   var edgeToList = [oldEdges]
 
+  if (oldEdges["center"].length == 0){
+    edgeToList = []
+  }
+
   var newFav = {edges: edgeToList, nodes: [oldNodes]}
 
   User.updateOne( {utorid:username}, { $set: { favourites: newFav } }, function(err) {
