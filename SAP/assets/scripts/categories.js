@@ -18,7 +18,7 @@ $(document).ready(function() {
 
   // Test and Exam Accommodation
   $("#Late-Request").load("../../txtFiles/lateAccommodation.txt");
-  $("#Request").load("../../txtFiles/requestNotetaking.txt");
+  $("#Request").load("../../txtFiles/onTimeAccommodation.txt");
   $("#Information").load("../../txtFiles/examAccommodationDeadlines.txt");
 
   //Building accessibility
@@ -117,4 +117,3 @@ $(document).ready(function() {
   }
 
 });
-

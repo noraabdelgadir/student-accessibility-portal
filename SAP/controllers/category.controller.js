@@ -42,6 +42,7 @@ function addFavourite(req, res, next){
   console.log("here")
   console.log(req.body.newcat)
   console.log(req.body.subcat)
+  console.log(req.session.currentUser)
   var flag = false
   var username = req.session.currentUser.utorid
   var oldFav = req.session.currentUser.favourites
@@ -156,6 +157,15 @@ function addFavourite(req, res, next){
     // var favNode = {}
 
     newFav.nodes[0][favName] = favNode
+
+    //special case new user
+    var newObj = {};
+    if (newFav.edges.length == 0){
+      newObj = {"center" : {}}
+      newFav.edges[0] = newObj;
+      console.log("HELLLO");
+      console.log(newFav.edges[0]);
+    }
     newFav.edges[0]["center"][favName] = {"length": "0.4"}
     if (flag == false){
       newFav.edges[0][favName] = {}
