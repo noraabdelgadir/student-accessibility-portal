@@ -211,7 +211,6 @@ function deleteFavourite(req, res, next){
   var oldEdges = req.session.currentUser.favourites.edges[0]
   var catt = req.body.newcat
   var oldEdgesCat = req.session.currentUser.favourites.edges[0].catt
-  console
   var nodesLen =  Object.keys(oldNodes).length
 
   var catName = ""
@@ -318,9 +317,18 @@ function deleteFavourite(req, res, next){
   }
 
   // check if old Edges if empty
+  console.log("HEYYYYY")
+  console.log(oldNodes)
+  console.log("EXCUSE ME")
+  console.log(oldEdges)
+  console.log("MISS")
+  console.log(oldEdges["center"][key]);
   for (var key in oldEdges){
+    console.log(key);
 
-    if (Object.keys(oldEdges[key]).length == 0){
+    if (Object.keys(oldEdges[key]).length == 0 && key != "center"){
+      console.log("TO DELETE")
+      console.log(key)
       delete oldEdges[key]
       delete oldEdges["center"][key]
       delete oldNodes[key]
