@@ -78,15 +78,15 @@ function addFavourite(req, res, next){
     link = "http://localhost:3030/category?category=test"
     if (req.body.subcat == "request"){
       subName = "Request"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=request"
+      subLink = "http://localhost:3030/category?category=test&subcategory=request"
     }
     if (req.body.subcat == "late"){
       subName = "Late Request"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=late"
+      subLink = "http://localhost:3030/category?category=test&subcategory=late"
     }
     if (req.body.subcat == "info"){
       subName = "Information"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=info"
+      subLink = "http://localhost:3030/category?category=test&subcategory=info"
     }
   }
   if (req.body.newcat == "counsellors"){
@@ -94,15 +94,15 @@ function addFavourite(req, res, next){
     link = "http://localhost:3030/category?category=counsellors"
     if (req.body.subcat == "adaptive"){
       subName = "Adaptive Technologist"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=adaptive"
+      subLink = "http://localhost:3030/category?category=counsellors&subcategory=adaptive"
     }
     if (req.body.subcat == "learning"){
       subName =  "Learning Strategist"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=learning"
+      subLink = "http://localhost:3030/category?category=counsellors&subcategory=learning"
     }
     if (req.body.subcat == "advisor"){
       subName = "Accessibility Advisor"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=advisor"
+      subLink = "http://localhost:3030/category?category=counsellors&subcategory=advisor"
     }
   }
   if (req.body.newcat == "notes"){
@@ -110,15 +110,15 @@ function addFavourite(req, res, next){
     link = "http://localhost:3030/category?category=notes"
     if (req.body.subcat == "upload"){
       subName = "Upload Notes"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=upload"
+      subLink = "http://localhost:3030/category?category=notes&subcategory=upload"
     }
     if (req.body.subcat == "volunteer"){
       subName =  "Volunteer"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=volunteer"
+      subLink = "http://localhost:3030/category?category=notes&subcategory=volunteer"
     }
     if (req.body.subcat == "notesrequest"){
       subName = "Request Note Taking"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=notesrequest"
+      subLink = "http://localhost:3030/category?category=notes&subcategory=notesrequest"
     }
   }
   if (req.body.newcat == "build"){
@@ -126,15 +126,15 @@ function addFavourite(req, res, next){
     link = "http://localhost:3030/category?category=build"
     if (req.body.subcat == "washrooms"){
       subName = "Gender Neutral Washrooms"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=washrooms"
+      subLink = "http://localhost:3030/category?category=build&subcategory=washrooms"
     }
     if (req.body.subcat == "wheelchair"){
       subName =  "Wheelchair Entrance Map"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=wheelchair"
+      subLink = "http://localhost:3030/category?category=build&subcategory=wheelchair"
     }
     if (req.body.subcat == "elevator"){
       subName = "Elevator Map"
-      subLink = "http://localhost:3030/category?category=documents&subcategory=elevator"
+      subLink = "http://localhost:3030/category?category=build&subcategory=elevator"
     }
   }
 
