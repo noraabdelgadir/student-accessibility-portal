@@ -100,7 +100,6 @@ $(document).ready(function() {
   }
 
   var service = document.getElementById(subCat);
-  // console.log(subCat);
   service.style.display = "block";
 
 

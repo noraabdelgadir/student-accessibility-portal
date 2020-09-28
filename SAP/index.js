@@ -28,12 +28,7 @@ app.use('/assets',express.static(path.join(__dirname, '/assets')));
 app.use(session({secret:"HEEEY",resave:false, saveUninitialized:false}))
 
 //serve directory for assets
-//app.use(express.static(__dirname + '/assets'));
 app.use(express.static(__dirname + '/'));
-
-/*app.get('/', (req, res) => {
-  res.send('NOTHING HERE YET')
-});*/
 
 // Definition of Routing of back-ends.
 app.use('', routes);
@@ -43,7 +38,6 @@ var server = app.listen(3030, function() {
 });
 
 // login and register underneath
-
 var currentUser = "none";
 app.get('/curUser', sendCur);
 
@@ -62,20 +56,12 @@ app.post('/login' ,function(req, res){
   var username = req.body.username
   var password = req.body.password
 
-  // var ha = req.body.username
-  // console.log(username);
-
   User.findOne({utorid: username, password: password},function(err, users) {
       if (err){
         res.status(400).send("oh no")
       }
       req.session.currentUser = users;
-      currentUser = username;
-      // console.log("HELLO");
-        console.log(username);
-        console.log(password);
       if (users) {
-        // res.redirect("/main");
         res.status(200).send("yay")
 
       }
@@ -91,9 +77,6 @@ app.post('/register' ,function(req, res){
   var firstname = req.body.firstname
   var lastname  = req.body.lastname
   var password = req.body.password
-  // var ha = req.body.username
-  // console.log(username);
-
   var id = new mongoose.mongo.ObjectId();
 
 
@@ -121,23 +104,17 @@ app.post('/register' ,function(req, res){
   admin: false
   });
 
-  console.log(newUser);
-  console.log("check ");
   User.create(newUser,function(err, users) {
       if (err){
         res.status(400).send("error")
       }
 
       if (users) {
-        // res.redirect("/main");
-        console.log(users)
         res.status(200).send("yay")
       }
 
       else {
         res.status(400).send("error")
       }
-
   })
-
 });

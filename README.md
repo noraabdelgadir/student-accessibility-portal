@@ -1,9 +1,17 @@
-# project-team-21
+# Student Accessibility Portal
+
 CSC301, Winter 2018, team project.
+
+This portal allows students to easily access U of T accessibility services.
 
 # Getting Started
 
-- clone repository
-- use command npm install to set up dependencies and node server
-- use command npm start to launch the program
-- go to localhost:3030
+To run the program, do the following:
+
+```
+cd SAP
+npm install
+npm start
+```
+
+Visit http://localhost:3030/.

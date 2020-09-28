@@ -1,7 +1,4 @@
 function favourite(cat, sub){
-  console.log(cat)
-  console.log(sub)
-
   $.ajax({
         url: "http://localhost:3030/category/favourite",
         type: "POST",
